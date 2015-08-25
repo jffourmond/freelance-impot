@@ -1,0 +1,75 @@
+body {
+	margin-top : 10px;
+	background-color : #52C4F9;
+}
+
+/* bootstrap classes */
+
+.container {
+background-color : #52C4F9;
+}
+
+.row {
+	padding : 10px 10px 0px 10px;
+	background-color : #52C4F9;
+}
+  
+/* custom classes */  
+  
+.titre {
+background-color : white;
+}
+
+.arrondi{
+	border-top-right-radius: 10px;
+	border-top-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+}
+
+.contenu{
+
+} 
+  
+  .bloc-courbe {
+	background-color : #52C4F9; 
+	padding-left : 0px;
+	padding-right : 10px;
+  }
+  
+  .courbe{
+	background-color : white;
+  }
+  
+  .bloc-inputs{
+    background-color : white;
+    display : table-cell;
+    vertical-align : middle;
+    float : none;
+	padding-top : 10px;
+  }
+ 
+ #inputRevenusGroup {
+	width : 100%;
+}
+
+#resultats{
+	margin-top : 20px;
+}
+
+#details{
+	margin-top : 20px;
+}
+
+#technos {
+  padding : 10px 10px 10px 10px;
+  background-color : white;
+}
+
+.last-row {
+	padding : 10px 10px 10px 10px;
+}
+
+.footer {
+	background-color : white;
+}

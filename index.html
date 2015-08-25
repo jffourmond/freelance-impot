@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="initial-scale=1" />
+   <title>Simulateur de calcul d'impôt sur le revenu pour indépendants pour freelances</title>
+   
+   <!-- Bootstrap -->
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap-theme.min.css">
+
+	<link rel="stylesheet" href="css/calculimpots.css">
+</head>
+<body>
+
+	<div class="container" ng-app="app">		
+		<div class="row"> 
+			<div class="titre col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center arrondi"> 
+				<h1>Simulateur de calcul d'impôt sur le revenu (IR) simplifié</h1>
+				<h2>pour travailleurs indépendants<h2>
+			</div>	
+		</div> 
+	  
+		<div ng-view></div>
+		
+		<div class="row last-row">
+			<div class="footer col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center arrondi">
+				<a href="#/">simulateur</a> - 
+				<a href="#/technos">technos</a> - 
+				<a href="http://jffourmond.github.io">blog</a>
+			</div>
+		</div>
+		
+    </div> <!-- container -->
+
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>	  
+	
+	<!-- angular -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular-route.js"></script>
+	
+	<script src="app.js" type="application/javascript"></script>
+	<script src="js/Tranche.js" type="application/javascript"></script>
+	<script src="js/calculController.js" type="application/javascript"></script>
+	<script src="js/calculService.js" type="application/javascript"></script>
+
+
+</body>
+</html>

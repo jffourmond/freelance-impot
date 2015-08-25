@@ -1,0 +1,43 @@
+	  
+        <div class="row contenu" ng-controller="CalculCtrl"> 
+            <div class="bloc-courbe hidden-xs hidden-sm hidden-md col-lg-7 text-center"> 
+				<div class="courbe arrondi">
+					<img src="img/courbe.png" /> 
+				</div>
+            </div> 
+ 
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-5 bloc-inputs arrondi"> 		 
+				<label for="inputRevenus">Saisissez le montant de vos revenus HT :</label>
+				<div id ="inputRevenusGroup" class="input-group">
+					<input
+						id="inputRevenus"
+						 type="number" 
+						 min="0"
+						 step="5000"
+						ng-model="revenusHT" 
+						ng-change="calculerIR()" 
+						class="form-control" 
+						aria-describedby="inputRevenus-addon"/> 
+					<span class="input-group-addon" id="inputRevenus-addon">euros par an </span>
+				</div>			  	
+			
+			         
+				<div id="resultats">
+					<label>Montant de votre impôt sur le revenu :</label> <br/>
+					<span class="h1">{{montantIR | number:0}} €</span> / an, soit {{pourcentageIR | number:0}}% de vos revenus.
+				</div>
+				
+				<div id="details">
+					<label>Détail :</label><br/>
+					<ul class="list-group">
+					  <li class="list-group-item">Tranche à {{tranche1.tauxImposition}}% : {{montantTranche1 | number:0}} €</li>
+					  <li class="list-group-item list-group-item-success">Tranche à {{tranche2.tauxImposition}}% : {{montantTranche2 | number:0}} €</li>
+					  <li class="list-group-item list-group-item-info">Tranche à {{tranche3.tauxImposition}}% : {{montantTranche3 | number:0}} €</li>
+					  <li class="list-group-item list-group-item-warning">Tranche à {{tranche4.tauxImposition}}% : {{montantTranche4 | number:0}} €</li>
+					  <li class="list-group-item list-group-item-danger">Tranche à {{tranche5.tauxImposition}}% : {{montantTranche5 | number:0}} €</li>
+					</ul>
+	
+				</div>
+            </div> 
+        </div> 
+	
