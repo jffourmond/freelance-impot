@@ -62,4 +62,14 @@ app.service('calculService', function(){
 			+ this.calculerMontantImpotTranche(remuneration, 4)
 			+ this.calculerMontantImpotTranche(remuneration, 5);
 	}		
+   
+   /**
+    * Calcule le pourcentage de l'impôt sur le revenu par rapport à la rémnunération.
+    * @param montantIR le montant de l'impôt sur le revenu calculé.
+    * @param remuneration le montant de la rémunération saisie.
+    * @returns le pourcentage calculé. Ex : 33.3333
+    */ 
+   this.calculerPourcentageIR = function(montantIR, remuneration){
+     return montantIR / remuneration * 100;
+   }
 });

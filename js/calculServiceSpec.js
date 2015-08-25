@@ -165,5 +165,16 @@ describe("calculServiceSpec", function() {
 			expect(montantIR).toBe(430389.98);
 		});		
 	});
- 
+  
+  	describe("calculerPourcentageIR", function() {
+	
+		it("La fonction calculerPourcentageIR devrait renvoyer 0 quand le montant de l'impôt est 0", function() {
+			expect(montantIR).toBe(calculService.calculerMontantIR(0, 0));
+		});	
+     
+		it("La fonction calculerPourcentageIR devrait renvoyer un pourcentage correct", function() {
+			expect(calculService.calculerMontantIR(1000, 10000)).toBe(10);
+         expect(calculService.calculerMontantIR(1000, 3000)).toBeCloseTo(33.3333);
+		});	     
+   });
 });

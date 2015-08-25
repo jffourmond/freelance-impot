@@ -6,7 +6,7 @@ app.controller('CalculCtrl', ['$scope', 'calculService', function($scope, calcul
 	$scope.tranche4 = calculService.getTranche(4);
 	$scope.tranche5 = calculService.getTranche(5);
 
-    $scope.remuneration = 0; /* en euros */
+   $scope.remuneration = 0; 
 	$scope.montantImpotTranche1 = 0;
 	$scope.montantImpotTranche2 = 0;
 	$scope.montantImpotTranche3 = 0;
@@ -15,7 +15,7 @@ app.controller('CalculCtrl', ['$scope', 'calculService', function($scope, calcul
 	$scope.montantIR = 0;
 	$scope.pourcentageIR = 0; 
 	
-    $scope.calculerMontantIR = function(){
+   $scope.calculerMontantIR = function(){
         
 		$scope.montantImpotTranche1 = calculService.calculerMontantImpotTranche($scope.remuneration, 1);
 		$scope.montantImpotTranche2 = calculService.calculerMontantImpotTranche($scope.remuneration, 2);
@@ -24,7 +24,7 @@ app.controller('CalculCtrl', ['$scope', 'calculService', function($scope, calcul
 		$scope.montantImpotTranche5 = calculService.calculerMontantImpotTranche($scope.remuneration, 5);
 		$scope.montantIR = calculService.calculerMontantIR($scope.remuneration);
 		
-		$scope.pourcentageIR = $scope.montantIR / $scope.remuneration * 100;
+		$scope.pourcentageIR = calculService.calculerPourcentageIR($scope.montantIR, $scope.remuneration);
     }
 	
 
