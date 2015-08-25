@@ -15,7 +15,7 @@ app.controller('CalculCtrl', ['$scope', 'calculService', function($scope, calcul
 	$scope.montantIR = 0;
 	$scope.pourcentageIR = 0; 
 	
-    $scope.calculerIR = function(){
+    $scope.calculerMontantIR = function(){
         
 		$scope.montantImpotTranche1 = calculService.calculerMontantImpotTranche($scope.remuneration, 1);
 		$scope.montantImpotTranche2 = calculService.calculerMontantImpotTranche($scope.remuneration, 2);
