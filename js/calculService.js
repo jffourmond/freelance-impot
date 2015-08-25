@@ -32,34 +32,34 @@ app.service('calculService', function(){
 		
 	/** 
 	 * Calcule le montant des impôts pour une tranche donnée. 
-	 * @param montantRevenusHT Ex : 100000
+	 * @param remuneration Ex : 100000
 	 * @param numeroTranche 1, 2, 3, 4 ou 5
 	 * @returns le montant de l'impôt pour la tranche demandée.
 	 */
-	this.calculMontantTranche = function(montantRevenusHT, numeroTranche){
-		if (!isNombre(montantRevenusHT) || montantRevenusHT < 0){
+	this.calculerMontantImpotTranche = function(remuneration, numeroTranche){
+		if (!isNombre(remuneration) || remuneration < 0){
 			throw "Montant invalide";
 		}
 	
 		var tranche = this.getTranche(numeroTranche);
-		if (montantRevenusHT < tranche.min){
+		if (remuneration < tranche.min){
 			return 0;
 		}
-		var plafond = (montantRevenusHT > tranche.max) ? tranche.max : montantRevenusHT;
+		var plafond = (remuneration > tranche.max) ? tranche.max : remuneration;
 		var montantImposablePourCetteTranche = plafond - tranche.min;
 		return (montantImposablePourCetteTranche) * tranche.tauxImposition / 100.0;
 	}
 	
 	/** 
 	 * Calcule le montant total des impôts en faisant la somme des montants imposés pour chacune des tranches. 
-	 * @param montantRevenusHT Ex : 100000
+	 * @param remuneration Ex : 100000
 	 * @returns le montant de total l'impôt sur le revenu.
 	 */
-	this.calculerMontantIR = function(montantRevenusHT){
-		return this.calculMontantTranche(montantRevenusHT, 1) 
-		    + this.calculMontantTranche(montantRevenusHT, 2)
-			+ this.calculMontantTranche(montantRevenusHT, 3)
-			+ this.calculMontantTranche(montantRevenusHT, 4)
-			+ this.calculMontantTranche(montantRevenusHT, 5);
+	this.calculerMontantIR = function(remuneration){
+		return this.calculerMontantImpotTranche(remuneration, 1) 
+		    + this.calculerMontantImpotTranche(remuneration, 2)
+			+ this.calculerMontantImpotTranche(remuneration, 3)
+			+ this.calculerMontantImpotTranche(remuneration, 4)
+			+ this.calculerMontantImpotTranche(remuneration, 5);
 	}		
 });

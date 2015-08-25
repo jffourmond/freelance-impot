@@ -6,25 +6,25 @@ app.controller('CalculCtrl', ['$scope', 'calculService', function($scope, calcul
 	$scope.tranche4 = calculService.getTranche(4);
 	$scope.tranche5 = calculService.getTranche(5);
 
-    $scope.revenusHT = 0; /* en euros */
-	$scope.montantTranche1 = 0;
-	$scope.montantTranche2 = 0;
-	$scope.montantTranche3 = 0;
-	$scope.montantTranche4 = 0;
-	$scope.montantTranche5 = 0;
+    $scope.remuneration = 0; /* en euros */
+	$scope.montantImpotTranche1 = 0;
+	$scope.montantImpotTranche2 = 0;
+	$scope.montantImpotTranche3 = 0;
+	$scope.montantImpotTranche4 = 0;
+	$scope.montantImpotTranche5 = 0;
 	$scope.montantIR = 0;
 	$scope.pourcentageIR = 0; 
 	
     $scope.calculerIR = function(){
         
-		$scope.montantTranche1 = calculService.calculMontantTranche($scope.revenusHT, 1);
-		$scope.montantTranche2 = calculService.calculMontantTranche($scope.revenusHT, 2);
-		$scope.montantTranche3 = calculService.calculMontantTranche($scope.revenusHT, 3);
-		$scope.montantTranche4 = calculService.calculMontantTranche($scope.revenusHT, 4);
-		$scope.montantTranche5 = calculService.calculMontantTranche($scope.revenusHT, 5);
-		$scope.montantIR = calculService.calculerMontantIR($scope.revenusHT);
+		$scope.montantImpotTranche1 = calculService.calculerMontantImpotTranche($scope.remuneration, 1);
+		$scope.montantImpotTranche2 = calculService.calculerMontantImpotTranche($scope.remuneration, 2);
+		$scope.montantImpotTranche3 = calculService.calculerMontantImpotTranche($scope.remuneration, 3);
+		$scope.montantImpotTranche4 = calculService.calculerMontantImpotTranche($scope.remuneration, 4);
+		$scope.montantImpotTranche5 = calculService.calculerMontantImpotTranche($scope.remuneration, 5);
+		$scope.montantIR = calculService.calculerMontantIR($scope.remuneration);
 		
-		$scope.pourcentageIR = $scope.montantIR / $scope.revenusHT * 100;
+		$scope.pourcentageIR = $scope.montantIR / $scope.remuneration * 100;
     }
 	
 

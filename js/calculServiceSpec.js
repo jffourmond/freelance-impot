@@ -98,32 +98,32 @@ describe("calculServiceSpec", function() {
 		});				
 	});	
 	
-	describe("calculMontantTranche", function() {
+	describe("calculerMontantImpotTranche", function() {
 	
-		it('La fonction calculMontantTranche devrait renvoyer 0 quand le montant est égal à 0', function() {
-			var montantTranche = calculService.calculMontantTranche(0, 5);
-			expect(montantTranche).toBe(0);
+		it('La fonction calculerMontantImpotTranche devrait renvoyer 0 quand le montant est égal à 0', function() {
+			var montantImpotTranche = calculService.calculerMontantImpotTranche(0, 5);
+			expect(montantImpotTranche).toBe(0);
 		});	
 			
-		it('La fonction calculMontantTranche devrait lancer une exception quand le numero de tranche est incorrect', function() {
+		it('La fonction calculerMontantImpotTranche devrait lancer une exception quand le numero de tranche est incorrect', function() {
 			try{
 				expect(function(){
-					calculService.calculMontantTranche(0, -1);
+					calculService.calculerMontantImpotTranche(0, -1);
 				}).toThrow();
 			} catch (exception){
 				expect(exception.numeroTranche).toBe(-1);
 			}
 		});			
 		
-		it('La fonction calculMontantTranche devrait lancer une exception quand le montant est négatif', function() {
+		it('La fonction calculerMontantImpotTranche devrait lancer une exception quand le montant est négatif', function() {
 			expect(function(){
-				calculService.calculMontantTranche(-1, 1);
+				calculService.calculerMontantImpotTranche(-1, 1);
 			}).toThrow("Montant invalide");
 		});		
 
-		it('La fonction calculMontantTranche devrait lancer une exception quand le montant est incorrect', function() {
+		it('La fonction calculerMontantImpotTranche devrait lancer une exception quand le montant est incorrect', function() {
 			expect(function(){
-				calculService.calculMontantTranche('blablabla', 1);
+				calculService.calculerMontantImpotTranche('blablabla', 1);
 			}).toThrow("Montant invalide");
 		});			
 	});	
