@@ -70,6 +70,9 @@ app.service('calculService', function(){
     * @returns le pourcentage calculé. Ex : 33.3333
     */ 
    this.calculerPourcentageIR = function(montantIR, remuneration){
+		if (remuneration == 0){
+			return 0;
+		}	
      return montantIR / remuneration * 100;
    }
 });
