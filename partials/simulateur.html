@@ -1,9 +1,29 @@
 	  
         <div class="row contenu" ng-controller="CalculCtrl"> 
             <div class="bloc-courbe hidden-xs hidden-sm hidden-md col-lg-7 text-center"> 
-				<div class="courbe arrondi">
-					<img src="img/courbe.png" /> 
-				</div>
+              <div class="courbe arrondi">
+                <div ng-controller="CourbeCtrl">
+                   <nvd3-line-chart
+                      data="data"
+                        id="impotChart"
+                        width="560"
+                        height="350"
+                        xAxisTickValues="getValeursAxeX()"
+                        yAxisTickValues="getValeursAxeY()"
+                        margin="{left:75,top:20,bottom:50,right:20}"
+                        showXAxis="true"
+                        showYAxis="true"
+                        yAxisShowMaxMin="false"
+        						xAxisShowMaxMin="false"
+                        xAxisLabel="montant de la rémunération en euros"
+                        yAxisLabel="montant de l'impot en euros"
+                        yAxisTickFormat="arrondir()"
+                        interactive="true"
+                        tooltips="false">
+                        <svg></svg>
+                    </nvd3-line-chart>
+                </div>
+              </div>
             </div> 
  
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-5 bloc-inputs arrondi"> 		 
