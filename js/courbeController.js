@@ -3,7 +3,7 @@ app.controller('CourbeCtrl', ['$scope', 'calculService', function($scope, calcul
 	var montantsImpotsCalcules = [];
 
   /* on met les montants calculés dans un tableau */
-  for (var i = 0; i <= 160; i++) {
+  for (var i = 0; i <= 160; i+=2) {
     var remuneration = i*1000;
     montantsImpotsCalcules.push([
       remuneration, 
