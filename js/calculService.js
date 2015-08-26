@@ -80,9 +80,9 @@ app.service('calculService', function(){
     * Renvoie la tranche correspondant à la rémunération en paramètre.
     */ 
    this.getTrancheByRemuneration = function(remuneration){
-      for (var i = 0 ; i < tranches.length; i++){
+      for (var i = tranches.length - 1 ; i >= 0; i--){
          var trancheCourante = tranches[i];
-         if (remuneration > trancheCourante.max){
+         if (remuneration > trancheCourante.min){
            return trancheCourante;
          }
       }

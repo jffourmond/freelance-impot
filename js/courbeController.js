@@ -58,7 +58,9 @@ app.controller('CourbeCtrl', ['$scope', 'calculService', function($scope, calcul
         var ir = arrondir(key.point[1]);
         var tranche = calculService.getTrancheByRemuneration(rem);
        
-        return  "<div class='tranche" + tranche.tauxImposition + "'>rémunération : " + rem + "€<br/>" +
+        return  "<div class='infoBulle tranche" + tranche.tauxImposition + "'>" + 
+                "tranche à " + tranche.tauxImposition + "%<br/>" + 
+          		 "rémunération : " + rem + "€<br/>" +
    				 "montant total de l'impôt : " + ir + "€<br/>" +
           		 "taux d'imposition global : " + arrondir(calculService.calculerPourcentageIR(ir, rem)) + "%</div>";
        

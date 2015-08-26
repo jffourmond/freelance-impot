@@ -13,7 +13,14 @@ background-color : #52C4F9;
 	padding : 10px 10px 0px 10px;
 	background-color : #52C4F9;
 }
-  
+
+/* NVD3 classes */
+.nvtooltip {
+
+ 	 border-width : 0px !important; 
+    border-radius: 0px !important;
+}
+
 /* custom classes */  
   
 .titre {
@@ -41,30 +48,41 @@ background-color : white;
 	background-color : white;
   }
 
+  .infoBulle{
+		border-width : 1px;
+      border-style : solid;
+    	padding : 5px 5px 5px 5px;
+  }
+
+  .tranche0{
+    background-color: white;
+  }
+
   .tranche14{
     color: #3c763d;
-    background-color: #dff0d8;
+    border-color : #3c763d;
+    background-color: #dff0d8;    
   }
 
   .tranche30{
     color: #31708f;
+    border-color : #31708f;
     background-color: #d9edf7;
   }
 
   .tranche41{
     color: #8a6d3b;
+    border-width : 1px;
+    border-color : #8a6d3b;
     background-color: #fcf8e3;
   }
 
-  .tranche55{
+  .tranche45{
     color: #a94442;
+    border-color : #a94442;
     background-color: #f2dede;
   }
 
-  .infoBulle{
-    background-color : white;
-    padding : 5px 5px 5px 5px;
-  }
   
   .bloc-inputs{
     background-color : white;
