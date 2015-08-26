@@ -3,7 +3,9 @@ describe("calculServiceSpec", function() {
 	var calculService;
 
     beforeEach(function() {
+		angular.mock.module('nvd3ChartDirectives');
 		angular.mock.module('app');
+
 		angular.mock.inject(function(_calculService_){
 			calculService = _calculService_;
 		});
