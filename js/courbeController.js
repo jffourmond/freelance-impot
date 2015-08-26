@@ -44,10 +44,22 @@ app.controller('CourbeCtrl', ['$scope', 'calculService', function($scope, calcul
     }
   };
   
-  $scope.arrondir = function(){
-    return function(montant){
-      return d3.format('.0f')(montant);
-    }
+  var arrondir = function(montant){
+    return d3.format('.0f')(montant);
+  }
+  
+  $scope.arrondirValeursAxeY = function(){
+    return arrondir;
   };
+  
+	$scope.getContenuInfoBulle = function(){
+     return function(key, x, y, e, graph) {
+        var rem = arrondir(key.point[0]);
+        var ir = arrondir(key.point[1]);
+        return  "<div>rémunération : " + rem + "€<br/>" +
+   				 "montant de l'impôt : " + ir + "€<br/>" +
+          		 "taux d'imposition : " + arrondir(calculService.calculerPourcentageIR(ir, rem)) + "%</div>";
+     }
+  }  
 	
 }]);

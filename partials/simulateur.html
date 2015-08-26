@@ -1,9 +1,8 @@
 	  
         <div class="row contenu" ng-controller="CalculCtrl"> 
             <div class="bloc-courbe hidden-xs hidden-sm hidden-md col-lg-7 text-center"> 
-              <div class="courbe arrondi">
-                <div ng-controller="CourbeCtrl">
-                   <nvd3-line-chart
+              <div class="courbe arrondi" ng-controller="CourbeCtrl">
+                <nvd3-line-chart
                       data="data"
                         id="impotChart"
                         width="560"
@@ -16,13 +15,13 @@
                         yAxisShowMaxMin="false"
         						xAxisShowMaxMin="false"
                         xAxisLabel="montant de la rémunération en euros"
-                        yAxisLabel="montant de l'impot en euros"
-                        yAxisTickFormat="arrondir()"
+                        yAxisLabel="montant de l'impôt en euros"
+                        yAxisTickFormat="arrondirValeursAxeY()"
                         interactive="true"
-                        tooltips="true">
+                        tooltips="true"
+                        tooltipcontent="getContenuInfoBulle()">
                         <svg></svg>
-                    </nvd3-line-chart>
-                </div>
+                    </nvd3-line-chart>               
               </div>
             </div> 
  
@@ -31,9 +30,9 @@
 				<div id ="inputRevenusGroup" class="input-group">
 					<input
 						id="inputRevenus"
-						 type="number" 
-						 min="0"
-						 step="5000"
+						type="number" 
+						min="0"
+						step="5000"
 						ng-model="remuneration" 
 						ng-change="calculerMontantIR()" 
 						class="form-control" 
