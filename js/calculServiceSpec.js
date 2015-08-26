@@ -203,4 +203,19 @@ describe("calculServiceSpec", function() {
 			expect(calculService.calculerPourcentageIR(10000, 10000)).toBe(100);
 		});	     
    });
+  
+  describe("getTrancheByRemuneration", function() {
+	
+		it("devrait renvoyer la tranche à 0% quand le montant de la rémunération est 9690", function() {
+			expect(calculService.getTrancheByRemuneration(9690).tauxImposition).toBe(0);
+		});	
+     
+      it("devrait renvoyer la tranche à 14% quand le montant de la rémunération est 9691", function() {
+			expect(calculService.getTrancheByRemuneration(9691).tauxImposition).toBe(14);
+		});	
+      it("devrait renvoyer la tranche à 45% quand le montant de la rémunération est 2000000", function() {
+			expect(calculService.getTrancheByRemuneration(2000000).tauxImposition).toBe(45);
+		});	    
+   });
+  
 });

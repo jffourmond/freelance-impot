@@ -32,7 +32,7 @@ app.controller('CourbeCtrl', ['$scope', 'calculService', function($scope, calcul
     }
   };
   
-    $scope.getValeursAxeY = function(){
+  $scope.getValeursAxeY = function(){
     return function(d){
        return [
          calculService.calculerMontantIR(calculService.getTranche(1).min), 
@@ -56,10 +56,14 @@ app.controller('CourbeCtrl', ['$scope', 'calculService', function($scope, calcul
      return function(key, x, y, e, graph) {
         var rem = arrondir(key.point[0]);
         var ir = arrondir(key.point[1]);
-        return  "<div>rémunération : " + rem + "€<br/>" +
-   				 "montant de l'impôt : " + ir + "€<br/>" +
-          		 "taux d'imposition : " + arrondir(calculService.calculerPourcentageIR(ir, rem)) + "%</div>";
+        var tranche = calculService.getTrancheByRemuneration(rem);
+       
+        return  "<div class='tranche" + tranche.tauxImposition + "'>rémunération : " + rem + "€<br/>" +
+   				 "montant total de l'impôt : " + ir + "€<br/>" +
+          		 "taux d'imposition global : " + arrondir(calculService.calculerPourcentageIR(ir, rem)) + "%</div>";
+       
      }
   }  
+  
 	
 }]);

@@ -40,6 +40,31 @@ background-color : white;
   .courbe{
 	background-color : white;
   }
+
+  .tranche14{
+    color: #3c763d;
+    background-color: #dff0d8;
+  }
+
+  .tranche30{
+    color: #31708f;
+    background-color: #d9edf7;
+  }
+
+  .tranche41{
+    color: #8a6d3b;
+    background-color: #fcf8e3;
+  }
+
+  .tranche55{
+    color: #a94442;
+    background-color: #f2dede;
+  }
+
+  .infoBulle{
+    background-color : white;
+    padding : 5px 5px 5px 5px;
+  }
   
   .bloc-inputs{
     background-color : white;

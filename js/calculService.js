@@ -57,7 +57,7 @@ app.service('calculService', function(){
 	 */
 	this.calculerMontantIR = function(remuneration){
 		return this.calculerMontantImpotTranche(remuneration, 1) 
-		    + this.calculerMontantImpotTranche(remuneration, 2)
+		   + this.calculerMontantImpotTranche(remuneration, 2)
 			+ this.calculerMontantImpotTranche(remuneration, 3)
 			+ this.calculerMontantImpotTranche(remuneration, 4)
 			+ this.calculerMontantImpotTranche(remuneration, 5);
@@ -74,5 +74,17 @@ app.service('calculService', function(){
 			return 0;
 		}	
      return montantIR / remuneration * 100;
+   }
+   
+   /**
+    * Renvoie la tranche correspondant à la rémunération en paramètre.
+    */ 
+   this.getTrancheByRemuneration = function(remuneration){
+      for (var i = 0 ; i < tranches.length; i++){
+         var trancheCourante = tranches[i];
+         if (remuneration > trancheCourante.max){
+           return trancheCourante;
+         }
+      }
    }
 });
