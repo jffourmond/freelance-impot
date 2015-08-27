@@ -1,4 +1,4 @@
-app.controller('CourbeCtrl', ['$scope', 'calculService', function($scope, calculService) {
+app.controller('CourbeCtrl', ['$scope', 'calculService', 'nombreEntierFilter', function($scope, calculService, nombreEntierFilter) {
 
 	var montantsImpotsCalcules = [];
 
@@ -45,7 +45,7 @@ app.controller('CourbeCtrl', ['$scope', 'calculService', function($scope, calcul
   };
   
   var arrondir = function(montant){
-    return d3.format('.0f')(montant);
+    return nombreEntierFilter(montant);
   }
   
   $scope.arrondirValeursAxeY = function(){

@@ -14,9 +14,9 @@
 
 	<link rel="stylesheet" href="css/freelance-impot.css">
 </head>
-<body>
+<body ng-app="app">
 
-	<div class="container" ng-app="app">		
+	<div class="container-fluid bandeau">		
 		<div class="row"> 
 			<div class="titre col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center arrondi"> 
            <h1>Freelance Impôt<br/>
@@ -24,7 +24,8 @@
            </h1>
 			</div>	
 		</div> 
-	  
+  </div>  
+	<div class="container" ng-app="app">	  
 		<div ng-view></div>
 		
 		<div class="row last-row">
@@ -50,6 +51,7 @@
 	
 	<script src="app.js" type="application/javascript"></script>
 	<script src="js/Tranche.js" type="application/javascript"></script>
+   <script src="js/nombreEntierFilter.js" type="application/javascript"></script>  
 	<script src="js/calculController.js" type="application/javascript"></script>
 	<script src="js/calculService.js" type="application/javascript"></script>
    <script src="js/courbeController.js" type="application/javascript"></script>
