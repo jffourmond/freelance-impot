@@ -5,7 +5,10 @@ app.config(function($routeProvider){
 	when("/", {
 		templateUrl : "partials/simulateur.html", 
 		controller : "CalculCtrl"
-	}).			
+	}).	
+	when("/apropos", {
+		templateUrl : "partials/apropos.html", 
+	}).   
 	when("/technos", {
 		templateUrl : "partials/technos.html", 
 	}).

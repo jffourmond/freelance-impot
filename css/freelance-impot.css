@@ -14,7 +14,6 @@
 /* custom classes */  
 
 .bandeau{
-  /*background-color : #52C4F9;*/
   background-color : #52C4F9;
 }
 
@@ -57,7 +56,6 @@
 
   .tranche41{
     color: #8a6d3b;
-    border-width : 1px;
     border-color : #8a6d3b;
     background-color: #fcf8e3;
   }
@@ -77,21 +75,12 @@
 	width : 100%;
 }
 
-#resultats{
+#resultats, #details{
 	margin-top : 20px;
 }
 
-#details{
-	margin-top : 20px;
-}
 
-#technos, #contact {
+.row > div {
   padding : 10px 10px 10px 10px;
 }
 
-.last-row {
-	padding : 10px 10px 10px 10px;
-}
-
-.footer {
-}
