@@ -207,7 +207,11 @@ describe("calculServiceSpec", function() {
    });
   
   describe("getTrancheByRemuneration", function() {
-	
+
+    	it("devrait renvoyer la tranche à 0% quand le montant de la rémunération est 0", function() {
+			expect(calculService.getTrancheByRemuneration(0).tauxImposition).toBe(0);
+		});	
+    
 		it("devrait renvoyer la tranche à 0% quand le montant de la rémunération est 9690", function() {
 			expect(calculService.getTrancheByRemuneration(9690).tauxImposition).toBe(0);
 		});	

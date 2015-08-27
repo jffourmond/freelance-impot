@@ -1,5 +1,4 @@
 body {
-	margin-top : 10px;
 	background-color : #52C4F9;
 }
 
@@ -34,9 +33,6 @@ background-color : white;
 	border-bottom-left-radius: 10px;
 }
 
-.contenu{
-
-} 
   
   .bloc-courbe {
 	background-color : #52C4F9; 
@@ -86,10 +82,7 @@ background-color : white;
   
   .bloc-inputs{
     background-color : white;
-    display : table-cell;
-    vertical-align : middle;
-    float : none;
-	padding-top : 10px;
+	 padding-top : 10px;
   }
  
  #inputRevenusGroup {

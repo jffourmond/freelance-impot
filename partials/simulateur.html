@@ -1,14 +1,15 @@
 	  
-        <div class="row contenu" ng-controller="CalculCtrl"> 
+        <div class="row" ng-controller="CalculCtrl"> 
             <div class="bloc-courbe hidden-xs hidden-sm hidden-md col-lg-7 text-center"> 
               <div class="courbe arrondi" ng-controller="CourbeCtrl">
                 <nvd3-line-chart
-                      data="data"
+                        data="data"
                         id="impotChart"
                         width="560"
                         height="350"
+                        interactive="true"
                         xAxisTickValues="getValeursAxeX()"
-                        yAxisTickValues="getValeursAxeY()"
+                        yAxisTickValues="getValeursAxeY()"                      
                         margin="{left:75,top:20,bottom:50,right:20}"
                         showXAxis="true"
                         showYAxis="true"
@@ -16,8 +17,7 @@
         						xAxisShowMaxMin="false"
                         xAxisLabel="montant de la rémunération en euros"
                         yAxisLabel="montant de l'impôt en euros"
-                        yAxisTickFormat="arrondirValeursAxeY()"
-                        interactive="true"
+                        yAxisTickFormat="arrondirValeursAxeY()"                       
                         tooltips="true"
                         tooltipcontent="getContenuInfoBulle()"
                         >
@@ -27,37 +27,37 @@
             </div> 
  
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-5 bloc-inputs arrondi"> 		 
-				<label for="inputRevenus">Saisissez le montant de votre rémunération :</label>
-				<div id ="inputRevenusGroup" class="input-group">
-					<input
-						id="inputRevenus"
-						type="number" 
-						min="0"
-						step="5000"
-						ng-model="remuneration" 
-						ng-change="calculerMontantIR()" 
-						class="form-control" 
-						aria-describedby="inputRevenus-addon"/> 
-					<span class="input-group-addon" id="inputRevenus-addon">euros par an </span>
-				</div>			  	
+              <label for="inputRevenus">Saisissez le montant de votre rémunération :</label>
+              <div id ="inputRevenusGroup" class="input-group">
+                 <input
+                    id="inputRevenus"
+                    type="number" 
+                    min="0"
+                    step="5000"
+                    ng-model="remuneration" 
+                    ng-change="calculerMontantIR()" 
+                    class="form-control" 
+                    aria-describedby="inputRevenus-addon"/> 
+                 <span class="input-group-addon" id="inputRevenus-addon">euros par an </span>
+              </div>			  	
 			
 			         
-				<div id="resultats">
-					<label>Montant de votre impôt sur le revenu :</label> <br/>
-					<span class="h1">{{montantIR | number:0}} €</span> / an, soit {{pourcentageIR | number:0}}% de votre rémunération.
-				</div>
+              <div id="resultats">
+                 <label>Montant de votre impôt sur le revenu :</label> <br/>
+                 <span class="h1">{{montantIR | number:0}} €</span> / an, soit {{pourcentageIR | number:0}}% de votre rémunération.
+              </div>
 				
-				<div id="details">
-					<label>Détail :</label><br/>
-					<ul class="list-group">
-					  <li class="list-group-item">Tranche à {{tranche1.tauxImposition}}% : {{montantImpotTranche1 | number:0}} €</li>
-					  <li class="list-group-item list-group-item-success">Tranche à {{tranche2.tauxImposition}}% : {{montantImpotTranche2 | number:0}} €</li>
-					  <li class="list-group-item list-group-item-info">Tranche à {{tranche3.tauxImposition}}% : {{montantImpotTranche3 | number:0}} €</li>
-					  <li class="list-group-item list-group-item-warning">Tranche à {{tranche4.tauxImposition}}% : {{montantImpotTranche4 | number:0}} €</li>
-					  <li class="list-group-item list-group-item-danger">Tranche à {{tranche5.tauxImposition}}% : {{montantImpotTranche5 | number:0}} €</li>
-					</ul>
-	
-				</div>
+              <div id="details">
+                 <label>Détail :</label><br/>
+                 <ul class="list-group">
+                   <li class="list-group-item">Tranche à {{tranche1.tauxImposition}}% : {{montantImpotTranche1 | number:0}} €</li>
+                   <li class="list-group-item list-group-item-success">Tranche à {{tranche2.tauxImposition}}% : {{montantImpotTranche2 | number:0}} €</li>
+                   <li class="list-group-item list-group-item-info">Tranche à {{tranche3.tauxImposition}}% : {{montantImpotTranche3 | number:0}} €</li>
+                   <li class="list-group-item list-group-item-warning">Tranche à {{tranche4.tauxImposition}}% : {{montantImpotTranche4 | number:0}} €</li>
+                   <li class="list-group-item list-group-item-danger">Tranche à {{tranche5.tauxImposition}}% : {{montantImpotTranche5 | number:0}} €</li>
+                 </ul>
+
+              </div>
             </div> 
         </div> 
 	

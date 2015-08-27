@@ -86,5 +86,6 @@ app.service('calculService', function(){
            return trancheCourante;
          }
       }
+     return tranche1;
    }
 });
