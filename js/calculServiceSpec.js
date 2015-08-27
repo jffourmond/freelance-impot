@@ -1,4 +1,4 @@
-describe("calculServiceSpec", function() {
+describe("calculService", function() {
 
 	var calculService;
 
