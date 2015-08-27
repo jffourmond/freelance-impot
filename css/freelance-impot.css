@@ -1,16 +1,17 @@
 body {
-	background-color : #52C4F9;
+	/*background-color : #52C4F9;*/
+  background-color : white;
 }
 
 /* bootstrap classes */
 
 .container {
-background-color : #52C4F9;
+background-color : white;
 }
 
 .row {
 	padding : 10px 10px 0px 10px;
-	background-color : #52C4F9;
+	background-color : white;
 }
 
 /* NVD3 classes */
@@ -35,7 +36,7 @@ background-color : white;
 
   
   .bloc-courbe {
-	background-color : #52C4F9; 
+	background-color : white; 
 	padding-left : 0px;
 	padding-right : 10px;
   }
