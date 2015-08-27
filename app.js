@@ -8,13 +8,10 @@ app.config(function($routeProvider){
 	}).	
 	when("/apropos", {
 		templateUrl : "partials/apropos.html", 
+      controller : "ContactCtrl"
 	}).   
 	when("/technos", {
 		templateUrl : "partials/technos.html", 
-	}).
-	when("/contact", {
-		templateUrl : "partials/contact.html", 
-      controller : "ContactCtrl"
 	}).   
 	otherwise({
 		redirectTo: "/"
