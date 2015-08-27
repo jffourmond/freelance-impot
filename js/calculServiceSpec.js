@@ -190,6 +190,7 @@ describe("calculServiceSpec", function() {
 			var montantIR = calculService.calculerMontantIR(1000000);
 			expect(montantIR).toBe(430389.98);
 		});		
+     
 	});
   
   	describe("calculerPourcentageIR", function() {

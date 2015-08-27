@@ -9,6 +9,9 @@ app.config(function($routeProvider){
 	when("/technos", {
 		templateUrl : "partials/technos.html", 
 	}).
+	when("/contact", {
+		templateUrl : "partials/contact.html", 
+	}).   
 	otherwise({
 		redirectTo: "/"
 	});
