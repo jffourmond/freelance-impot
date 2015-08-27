@@ -11,6 +11,7 @@ app.config(function($routeProvider){
 	}).
 	when("/contact", {
 		templateUrl : "partials/contact.html", 
+      controller : "ContactCtrl"
 	}).   
 	otherwise({
 		redirectTo: "/"
