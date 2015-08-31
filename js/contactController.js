@@ -4,6 +4,5 @@ app.controller('ContactCtrl', ['$scope', '$window', function($scope, $window) {
 		$window.open('mailto:' + 'freelance' + '.' + 'impot' + '@' + 'gmail' + '.' + 'com' + '?subject=Freelance Impôt');
     }
 
-
 }]);
 

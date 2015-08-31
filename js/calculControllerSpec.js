@@ -22,7 +22,7 @@ describe("CalculCtrl", function() {
       calculController = createControllerFunction();
 	});
 
-	it('devrait être initialisé avec', function(){
+	it('devrait être initialisé', function(){
 		expect(calculController).not.toBe(null);
       expect(scope.remuneration).toBe(0)
 	});
