@@ -1,6 +1,6 @@
 app.controller('CourbeCtrl', ['$scope', 'calculService', 'nombreEntierFilter', function($scope, calculService, nombreEntierFilter) {
-
-	var montantsImpotsCalcules = [];
+ 
+  var montantsImpotsCalcules = [];
 
   /* on met les montants calculés dans un tableau */
   for (var i = 0; i <= 160; i+=2) {
@@ -23,11 +23,11 @@ app.controller('CourbeCtrl', ['$scope', 'calculService', 'nombreEntierFilter', f
   $scope.getValeursAxeX = function(){
     return function(d){
        return [
-         calculService.getTranche(1).min, 
-         calculService.getTranche(2).min, 
-         calculService.getTranche(3).min, 
-         calculService.getTranche(4).min, 
-         calculService.getTranche(5).min, 
+         $scope.tranche1.min, 
+         $scope.tranche2.min, 
+         $scope.tranche3.min, 
+         $scope.tranche4.min, 
+         $scope.tranche5.min, 
        ];
     }
   };
@@ -35,11 +35,11 @@ app.controller('CourbeCtrl', ['$scope', 'calculService', 'nombreEntierFilter', f
   $scope.getValeursAxeY = function(){
     return function(d){
        return [
-         calculService.calculerMontantIR(calculService.getTranche(1).min), 
-         calculService.calculerMontantIR(calculService.getTranche(2).min), 
-         calculService.calculerMontantIR(calculService.getTranche(3).min), 
-         calculService.calculerMontantIR(calculService.getTranche(4).min), 
-         calculService.calculerMontantIR(calculService.getTranche(5).min), 
+         calculService.calculerMontantIR($scope.tranche1.min), 
+         calculService.calculerMontantIR($scope.tranche2.min), 
+         calculService.calculerMontantIR($scope.tranche3.min), 
+         calculService.calculerMontantIR($scope.tranche4.min), 
+         calculService.calculerMontantIR($scope.tranche5.min), 
        ];
     }
   };
