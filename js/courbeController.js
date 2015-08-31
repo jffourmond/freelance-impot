@@ -59,10 +59,10 @@ app.controller('CourbeCtrl', ['$scope', 'calculService', 'nombreEntierFilter', f
         var tranche = calculService.getTrancheByRemuneration(rem);
        
         return  "<div class='infoBulle tranche" + tranche.tauxImposition + "'>" + 
-                "tranche à " + tranche.tauxImposition + "%<br/>" + 
-          		 "rémunération : " + arrondir(rem) + "€<br/>" +
-   				 "montant total de l'impôt : " + arrondir(ir) + "€<br/>" +
-          		 "taux d'imposition global : " + arrondir(calculService.calculerPourcentageIR(ir, rem)) + "%</div>";
+                "Tranche à " + tranche.tauxImposition + "%.<br/>" + 
+          		 "Pour une rémunération de <b>" + arrondir(rem) + "</b>€,<br/>" +
+   				 "le montant total de l'impôt est <b>" + arrondir(ir) + "</b>€,<br/>" +
+          		 "soit " + arrondir(calculService.calculerPourcentageIR(ir, rem)) + "% de la rémunération.</div>";
        
      }
   }  
