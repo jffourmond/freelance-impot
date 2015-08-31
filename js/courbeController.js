@@ -48,20 +48,20 @@ app.controller('CourbeCtrl', ['$scope', 'calculService', 'nombreEntierFilter', f
     return nombreEntierFilter(montant);
   }
   
-  $scope.arrondirValeursAxeY = function(){
+  $scope.arrondirValeursAxe = function(){
     return arrondir;
   };
   
 	$scope.getContenuInfoBulle = function(){
      return function(key, x, y, e, graph) {
-        var rem = arrondir(key.point[0]);
-        var ir = arrondir(key.point[1]);
+        var rem = key.point[0];
+        var ir = key.point[1];
         var tranche = calculService.getTrancheByRemuneration(rem);
        
         return  "<div class='infoBulle tranche" + tranche.tauxImposition + "'>" + 
                 "tranche à " + tranche.tauxImposition + "%<br/>" + 
-          		 "rémunération : " + rem + "€<br/>" +
-   				 "montant total de l'impôt : " + ir + "€<br/>" +
+          		 "rémunération : " + arrondir(rem) + "€<br/>" +
+   				 "montant total de l'impôt : " + arrondir(ir) + "€<br/>" +
           		 "taux d'imposition global : " + arrondir(calculService.calculerPourcentageIR(ir, rem)) + "%</div>";
        
      }
