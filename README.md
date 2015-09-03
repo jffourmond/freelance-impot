@@ -16,8 +16,8 @@ Simulateur de calcul d'impôt sur le revenu ultra simplifié, pour travailleurs 
 
 1. Récupérer le Dockerfile
 2. Aller dans le répertoire où est situé le Dockerfile
-3. Taper "docker build -t freelance-impot ." pour construire l'image du container.
-4. Taper "docker run -d -p 80:80 -t freelance-impot" pour démarrer le container.
+3. Taper `docker build -t freelance-impot .` pour construire l'image du container.
+4. Taper `docker run -d -p 80:80 -t freelance-impot` pour démarrer le container.
 
 ## Tester l'appli
 
