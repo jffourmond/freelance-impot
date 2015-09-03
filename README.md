@@ -1,7 +1,7 @@
-# impot-freelance
-Simulateur de calcul d'impôt sur le revenu (IR) simplifié pour travailleurs indépendants
+# Freelance Impôt
+Simulateur de calcul d'impôt sur le revenu ultra simplifié, pour travailleurs indépendants
 
-## Technologies utilisées :
+## Technologies utilisées
  
 * JavaScript
 * AngularJS 1.4
@@ -12,3 +12,13 @@ Simulateur de calcul d'impôt sur le revenu (IR) simplifié pour travailleurs in
 * CSS 3
 * Docker
 
+## Lancer l'appli avec Docker 
+
+1. Récupérer le Dockerfile
+2. Aller dans le répertoire où est situé le Dockerfile
+3. Taper "docker build -t freelance-impot ." pour construire l'image du container.
+4. Taper "docker run -d -p 80:80 -t freelance-impot" pour démarrer le container.
+
+## Tester l'appli
+
+L'appli est déployée à cette adresse : http://www.freelance-impot.fr

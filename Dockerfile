@@ -1,4 +1,4 @@
-#Se base sur une image Ubuntu 14.04
+# Se base sur une image Ubuntu 14.04
 FROM ubuntu:14.04
 
 # Met a jour les packages linux
