@@ -1,63 +1,67 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="initial-scale=1" />
-   <title>Freelance Impôt : simulateur de calcul d'impôt sur le revenu ultra simplifié, pour travailleurs indépendants</title>
-   
-   <!-- Bootstrap -->
-	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
-	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap-theme.min.css">
-  
-   <!-- NVD3.js -->
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/nvd3/1.8.1/nv.d3.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1" />
+    <title>Freelance Impôt : simulateur de calcul d'impôt sur le revenu ultra simplifié, pour travailleurs indépendants</title>
 
-	<link rel="stylesheet" href="css/freelance-impot.css">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap-theme.min.css">
+
+    <!-- NVD3.js -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/nvd3/1.8.1/nv.d3.min.css">
+
+    <link rel="stylesheet" href="css/freelance-impot.css">
 </head>
-<body ng-app="app">
 
-	<div class="container-fluid bandeau">		
-		<div class="row"> 
-			<div class="titre col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center arrondi"> 
-           <h1>Freelance Impôt<br/>
+<body data-ng-app="app">
+
+    <div class="container-fluid bandeau">
+        <div class="row">
+            <div class="titre col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center arrondi">
+                <h1>Freelance Impôt<br/>
              <small>Simulateur de calcul d'impôt sur le revenu ultra simplifié pour indépendants</small>
            </h1>
-			</div>	
-		</div> 
-  </div>  
-	<div class="container" ng-app="app">	  
-		<div ng-view></div>
-		
-		<div class="row">
-			<div class="footer col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center arrondi">
-				<a href="#/">simulateur</a> - 
-            <a href="#/apropos">à propos</a> - 
-            <a href="#/technos">technos</a>
-			</div>
-		</div>
-		
-    </div> <!-- container -->
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div data-ng-view></div>
 
-	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>	  
-	
-	<!-- angular -->
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular-route.min.js"></script>
-        
-   <!-- D3 et NVD3 -->
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/nvd3/1.8.1/nv.d3.min.js"></script>
-   <script src="lib/angularjs-nvd3-directives.min.js"></script>
-	
-	<script src="app.js" type="application/javascript"></script>
-	<script src="js/Tranche.js" type="application/javascript"></script>
-   <script src="js/nombreEntierFilter.js" type="application/javascript"></script>  
-	<script src="js/calculController.js" type="application/javascript"></script>
-	<script src="js/calculService.js" type="application/javascript"></script>
-   <script src="js/courbeController.js" type="application/javascript"></script>
-   <script src="js/contactController.js" type="application/javascript"></script>
+        <div class="row">
+            <div class="footer col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center arrondi">
+                <a href="#/">simulateur</a> -
+                <a href="#/apropos">à propos</a> -
+                <a href="#/technos">technos</a>
+            </div>
+        </div>
+
+    </div>
+    <!-- container -->
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
+    <!-- angular -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular-route.min.js"></script>
+
+    <!-- D3 et NVD3 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/nvd3/1.8.1/nv.d3.min.js"></script>
+    <script src="lib/angularjs-nvd3-directives.min.js"></script>
+
+    <script src="app.js" type="application/javascript"></script>
+    <script src="js/Tranche.js" type="application/javascript"></script>
+    <script src="js/nombreEntierFilter.js" type="application/javascript"></script>
+    <script src="js/calculController.js" type="application/javascript"></script>
+    <script src="js/calculService.js" type="application/javascript"></script>
+    <script src="js/courbeController.js" type="application/javascript"></script>
+    <script src="js/contactController.js" type="application/javascript"></script>
 
 </body>
+
 </html>

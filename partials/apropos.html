@@ -1,58 +1,57 @@
 <div class="row">
-     <div>
-       
-
-      <div class="panel panel-default">
-        <div class="panel-heading">Pourquoi ce site ?</div>
-        <div class="panel-body">
-			<p> 
-				Quand on est salarié, on sait qu'il faut garder chaque mois une partie de son salaire pour payer l'impôt sur le revenu (IR).
-				Cette somme pouvant être mensualisée, ce n'est pas forcément une préoccupation pour le salarié. 
-			</p>
-			<p>
-				Par contre, quand on se lance en tant que travailleur non salarié (TNS), on ne sait pas bien le montant que l'on va devoir payer. 
-				Cette somme pouvant être beaucoup plus importante, il est important de savoir à quoi s'attendre.
-				La plupart des simulateurs que l'on trouve sur internet sont complexes. 
-				Ce site a donc été développé dans le but de donner rapidement une idée du montant à payer, en saisissant uniquement le montant de sa rémunération annuelle.
-			</p>
-        </div>	  
- 	  </div> 
-     <div class="panel panel-default">
-        <div class="panel-heading">Comment ça marche ?</div>
-        <div class="panel-body">
-			<p>			
-				Les chiffres calculés par le simulateur peuvent différer de ceux calculés par le Ministère des finances et des comptes publics. 
-				Il s'agit d'une simulation simplifiée au maximum, basée sur les tranches d'imposition données par le Ministère sur cette page : 
-				<a href="http://vosdroits.service-public.fr/particuliers/F1419.xhtml">
+    <div>
+        <div class="panel panel-default">
+            <div class="panel-heading">Pourquoi ce site ?</div>
+            <div class="panel-body">
+                <p>
+                    Quand on est salarié, on sait qu'il faut garder chaque mois une partie de son salaire pour payer l'impôt sur le revenu (IR). Cette somme pouvant être mensualisée, ce n'est pas forcément une préoccupation pour le salarié.
+                </p>
+                <p>
+                    Par contre, quand on se lance en tant que travailleur non salarié (TNS), on ne sait pas bien le montant que l'on va devoir payer. Cette somme pouvant être beaucoup plus importante, il est important de savoir à quoi s'attendre. La plupart des simulateurs que l'on trouve sur internet sont complexes. Ce site a donc été développé dans le but de donner rapidement une idée du montant à payer, en saisissant uniquement le montant de sa rémunération annuelle.
+                </p>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">Comment ça marche ?</div>
+            <div class="panel-body">
+                <p>
+                    Les chiffres calculés par le simulateur peuvent différer de ceux calculés par le Ministère des finances et des comptes publics. Il s'agit d'une simulation simplifiée au maximum, basée sur les tranches d'imposition données par le Ministère sur cette page :
+                    <a href="http://vosdroits.service-public.fr/particuliers/F1419.xhtml">
 					Quel est le barème de l'impôt sur le revenu ? 
 				</a>
-          </p>
-          <p>
-				Le simulateur calcule le montant de l'impôt sur le revenu 2015 pour une personne célibataire. 
-				Ni les abattements, ni la décôte, ni les parts de quotient familial, ni aucune réduction d'impôts ne sont pris en compte. 
-			</p>
-			<p>
-				Dans le simulateur, le montant à saisir est appelé "rémunération" et dépend du statut du travailleur. 
-				S'il s'agit par exemple d'une Entreprise Individuelle, la rémunération correspond aux revenus annuels HT.
-				S'il s'agit d'une EURL, la rémunération correspond à ce que l'entreprise verse au travailleur. 
-            Pour un salarié, il s'agirait du revenu net imposable.
-			</p>
+                </p>
+                <p>
+                    Le simulateur calcule le montant de l'impôt sur le revenu 2015 pour une personne célibataire. Ni les abattements, ni la décôte, ni les parts de quotient familial, ni aucune réduction d'impôts ne sont pris en compte.
+                </p>
+                <p>
+                    Dans le simulateur, le montant à saisir est appelé "rémunération" et dépend du statut du travailleur. S'il s'agit par exemple d'une Entreprise Individuelle, la rémunération correspond aux revenus annuels HT. S'il s'agit d'une EURL, la rémunération correspond à ce que l'entreprise verse au travailleur. Pour un salarié, il s'agirait du revenu net imposable.
+                </p>
+            </div>
         </div>
-      </div>     
-     
-      <div class="panel panel-default" ng-controller="ContactCtrl">
-        <div class="panel-heading">Une question ? Une remarque ? Une suggestion ? </div>
-        <div class="panel-body">
-            Pour me suivre sur Twitter : 
-            <a href="https://twitter.com/jf_fourmond" class="twitter-follow-button" data-show-count="false">Follow @jf_fourmond</a>
-            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-          	<br/>
-            Pour me contacter par e-mail, <a href="#/contact" ng-click="ouvrirFenetreEnvoiEmail()">cliquer ici</a>.<br/>
-          	Pour laisser un commentaire à propos de ce site sur mon blog, <a href="http://jffourmond.github.io/mes-applications/">cliquer ici</a>.<br/>
 
+        <div class="panel panel-default" ng-controller="ContactCtrl">
+            <div class="panel-heading">Une question ? Une remarque ? Une suggestion ? </div>
+            <div class="panel-body">
+                Pour me suivre sur Twitter :
+                <a href="https://twitter.com/jf_fourmond" class="twitter-follow-button" data-show-count="false">Follow @jf_fourmond</a>
+                <script>
+                    ! function (d, s, id) {
+                        var js, fjs = d.getElementsByTagName(s)[0],
+                            p = /^http:/.test(d.location) ? 'http' : 'https';
+                        if(!d.getElementById(id)) {
+                            js = d.createElement(s);
+                            js.id = id;
+                            js.src = p + '://platform.twitter.com/widgets.js';
+                            fjs.parentNode.insertBefore(js, fjs);
+                        }
+                    }(document, 'script', 'twitter-wjs');
+                </script>
+                <br/> Pour me contacter par e-mail, <a href="#/contact" ng-click="ouvrirFenetreEnvoiEmail()">cliquer ici</a>.
+                <br/> Pour laisser un commentaire à propos de ce site sur mon blog, <a href="http://jffourmond.github.io/mes-applications/">cliquer ici</a>.
+                <br/>
+
+            </div>
         </div>
-      </div>     
-  
-  </div>
+
+    </div>
 </div>
-
