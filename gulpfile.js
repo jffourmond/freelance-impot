@@ -10,15 +10,12 @@ gulp.task('jshint', function() {
 });
 
 gulp.task('scripts', function(){
-  return gulp.src([
-      'app/scripts/*.js', 
-      '!app/scripts/*Spec.js', 
-      'app/lib/angular-nvd3-directives.min.js'])
+  return gulp.src(['es6/*.js'])
     .pipe(babel({
 			presets: ['es2015']
 		}))
-    .pipe(concat('freelance-impot.js'))
-    .pipe(gulp.dest('app/dist/'))
+    .pipe(concat('es6.js'))
+    .pipe(gulp.dest('.'))
 });
 
 gulp.task('default', ['jshint', 'scripts']);
