@@ -1,7 +1,5 @@
 'use strict';
 
-//import ContactController from './ContactController.js';
-
 var app = angular.module('app', ['ngRoute', 'nvd3ChartDirectives']);
 
 app.config(function ($routeProvider) {

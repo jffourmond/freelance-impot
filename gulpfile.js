@@ -18,4 +18,7 @@ gulp.task('scripts', function(){
     .pipe(gulp.dest('.'))
 });
 
-gulp.task('default', ['jshint', 'scripts']);
+gulp.task("default", function() {
+  gulp.watch("./**", ["scripts"]);
+})
+
