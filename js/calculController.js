@@ -1,6 +1,6 @@
 'use strict';
 
-app.controller('CalculCtrl', ['$scope', 'calculService', function ($scope, calculService) {
+app.controller('CalculCtrl', ['$scope', 'CalculService', function ($scope, calculService) {
 
     $scope.tranche1 = calculService.getTranche(1);
     $scope.tranche2 = calculService.getTranche(2);

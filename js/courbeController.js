@@ -1,6 +1,6 @@
 'use strict';
 
-app.controller('CourbeCtrl', ['$scope', 'calculService', 'nombreEntierFilter', function ($scope, calculService, nombreEntierFilter) {
+app.controller('CourbeCtrl', ['$scope', 'CalculService', 'nombreEntierFilter', function ($scope, calculService, nombreEntierFilter) {
 
     var montantsImpotsCalcules = [];
     var i;
