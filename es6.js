@@ -41,3 +41,24 @@ var ContactController = function () {
 }();
 
 app.controller("ContactController", ContactController);
+'use strict';
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var Tranche = function Tranche(min, max, tauxImposition) {
+    _classCallCheck(this, Tranche);
+
+    this.min = min;
+    this.max = max;
+    this.tauxImposition = tauxImposition;
+};
+'use strict';
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var TrancheInconnueException = function TrancheInconnueException(numeroTranche) {
+    _classCallCheck(this, TrancheInconnueException);
+
+    this.message = "Tranche d'imposition inconnue";
+    this.numeroTranche = numeroTranche;
+};
