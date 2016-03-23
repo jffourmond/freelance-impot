@@ -32,6 +32,4 @@ class CalculController {
     }
 }
 
-CalculController.$inject = ["CalculService"];
-app.controller("CalculController", CalculController);
-
+app.controller("CalculController", ["CalculService", CalculController]);

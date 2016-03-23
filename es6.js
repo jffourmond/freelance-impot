@@ -60,8 +60,7 @@ var CalculController = function () {
     return CalculController;
 }();
 
-CalculController.$inject = ["CalculService"];
-app.controller("CalculController", CalculController);
+app.controller("CalculController", ["CalculService", CalculController]);
 'use strict';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -208,6 +207,34 @@ var ContactController = function () {
 }();
 
 app.controller("ContactController", ContactController);
+'use strict';
+
+app.filter('nombreEntier', function () {
+
+    /**
+      * @returns Exemple : 99999.99 => '100 000'
+      */
+    return function (nombreAvecVirgules) {
+
+        var arrondi = '' + Math.round(nombreAvecVirgules);
+        var resultat = '';
+        var i = void 0;
+
+        var compteur123 = 0;
+        for (i = arrondi.length - 1; i >= 0; i -= 1) {
+
+            if (compteur123 === 3) {
+                resultat = arrondi[i] + ' ' + resultat;
+                compteur123 = 0;
+            } else {
+                resultat = arrondi[i] + resultat;
+            }
+            compteur123 += 1;
+        }
+
+        return resultat;
+    };
+});
 'use strict';
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
