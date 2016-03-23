@@ -107,11 +107,11 @@ app.controller('CourbeCtrl', ['$scope', 'CalculService', 'nombreEntierFilter', f
     $scope.getValeursAxeX = function () {
         return function (d) {
             return [
-                $scope.tranche1.min,
-                $scope.tranche2.min,
-                $scope.tranche3.min,
-                $scope.tranche4.min,
-                $scope.tranche5.min
+                calculService.tranche1.min,
+                calculService.tranche2.min,
+                calculService.tranche3.min,
+                calculService.tranche4.min,
+                calculService.tranche5.min
             ];
         };
     };
@@ -119,11 +119,11 @@ app.controller('CourbeCtrl', ['$scope', 'CalculService', 'nombreEntierFilter', f
     $scope.getValeursAxeY = function () {
         return function (d) {
             return [
-                calculService.calculerMontantIR($scope.tranche1.min),
-                calculService.calculerMontantIR($scope.tranche2.min),
-                calculService.calculerMontantIR($scope.tranche3.min),
-                calculService.calculerMontantIR($scope.tranche4.min),
-                calculService.calculerMontantIR($scope.tranche5.min)
+                calculService.calculerMontantIR(calculService.tranche1.min),
+                calculService.calculerMontantIR(calculService.tranche2.min),
+                calculService.calculerMontantIR(calculService.tranche3.min),
+                calculService.calculerMontantIR(calculService.tranche4.min),
+                calculService.calculerMontantIR(calculService.tranche5.min)
             ];
         };
     };

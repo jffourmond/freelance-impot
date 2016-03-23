@@ -6,7 +6,7 @@ app.config(function ($routeProvider) {
     $routeProvider.
     when("/", {
         templateUrl: "partials/simulateur.html",
-        controller: "CalculCtrl"
+        controller: "CalculController"
     }).
     when("/apropos", {
         templateUrl: "partials/apropos.html",
