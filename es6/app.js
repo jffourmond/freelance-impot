@@ -10,8 +10,7 @@ app.config(function ($routeProvider) {
     }).
     when("/apropos", {
         templateUrl: "partials/apropos.html",
-        controller: "ContactController", 
-        controllerAs: "contact"
+        controller: "ContactController"
     }).
     when("/technos", {
         templateUrl: "partials/technos.html"

@@ -1,15 +1,18 @@
 <div class="row" ng-controller="CalculController as calcul">
-    <div class="bloc-courbe hidden-xs hidden-sm hidden-md col-lg-7 text-center" ng-controller="CourbeCtrl">
-        <nvd3-line-chart data="data" id="impotChart" width="560" height="350" interactive="true" 
-            xAxisTickValues="getValeursAxeX()" yAxisTickValues="getValeursAxeY()" 
+
+    <div class="bloc-courbe hidden-xs hidden-sm hidden-md col-lg-7 text-center" 
+        ng-controller="CourbeController as courbe">
+        
+        <nvd3-line-chart data="courbe.data" id="impotChart" width="560" height="350" interactive="true" 
+            xAxisTickValues="courbe.getValeursAxeX()" yAxisTickValues="courbe.getValeursAxeY()" 
             margin="{left:75,top:20,bottom:50,right:20}" 
             showXAxis="true" showYAxis="true" 
             yAxisShowMaxMin="false" xAxisShowMaxMin="false" 
             xAxisLabel="montant de la rémunération en euros" 
             yAxisLabel="montant de l'impôt en euros" 
-            xAxisTickFormat="arrondirValeursAxe()" 
-            yAxisTickFormat="arrondirValeursAxe()" 
-            tooltips="true" tooltipcontent="getContenuInfoBulle()">
+            xAxisTickFormat="courbe.arrondirValeursAxe()" 
+            yAxisTickFormat="courbe.arrondirValeursAxe()" 
+            tooltips="true" tooltipcontent="courbe.getContenuInfoBulle()">
             <svg></svg>
         </nvd3-line-chart>
     </div>
