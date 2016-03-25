@@ -1,6 +1,6 @@
 'use strict';
 
-class Tranche{
+export default class Tranche{
     
     constructor(min, max, tauxImposition) {
         this.min = min;

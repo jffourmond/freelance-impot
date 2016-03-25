@@ -1,6 +1,18 @@
 'use strict';
 
-var app = angular.module('app', ['ngRoute', 'nvd3ChartDirectives']);
+import nombreEntierFilter from './nombreEntierFilter.js';
+import CalculService from './CalculService.js';
+import CalculController from './CalculController.js';
+import CourbeController from './CourbeController.js';
+import ContactController from './ContactController.js';
+
+let applicationName = 'freelance-impot';
+let app = angular.module(applicationName, ['ngRoute', 'nvd3ChartDirectives']);
+angular.module(applicationName).filter('nombreEntier', nombreEntierFilter);
+angular.module(applicationName).service("CalculService", CalculService);
+angular.module(applicationName).controller("CalculController", ["CalculService", CalculController]);
+angular.module(applicationName).controller('CourbeController', ['CalculService', 'nombreEntierFilter', CourbeController]);
+angular.module(applicationName).controller("ContactController", ContactController);
 
 app.config(function ($routeProvider) {
     $routeProvider.
@@ -19,3 +31,5 @@ app.config(function ($routeProvider) {
         redirectTo: "/"
     });
 });
+
+angular.bootstrap(document, [applicationName]);

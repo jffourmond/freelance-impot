@@ -1,6 +1,6 @@
 'use strict';
 
-class ContactController {
+export default class ContactController {
 
     constructor($scope, $window) {
         this.$scope = $scope;
@@ -12,4 +12,3 @@ class ContactController {
     }
 }
 
-app.controller("ContactController", ContactController);

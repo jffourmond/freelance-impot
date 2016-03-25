@@ -1,6 +1,6 @@
 'use strict';
 
-class CourbeController {
+export default class CourbeController {
 
     constructor(calculService, nombreEntierFilter) {
         this.calculService = calculService;
@@ -18,7 +18,6 @@ class CourbeController {
         /* on met les montants calculés dans un tableau */
         for (i = 0; i <= 160; i += 2) {
             let remuneration = i * 1000;
-            console.log("[" + remuneration + "," + this.calculService.calculerMontantIR(remuneration) + "],");
             montantsImpotsCalcules.push([
                 remuneration,
                 this.calculService.calculerMontantIR(remuneration)
@@ -80,4 +79,3 @@ class CourbeController {
     }
 }
 
-app.controller('CourbeController', ['CalculService', 'nombreEntierFilter', CourbeController]);

@@ -1,6 +1,6 @@
 'use strict';
 
-class CalculController {
+export default class CalculController {
     
     constructor(calculService) {
         this.calculService = calculService;
@@ -31,5 +31,3 @@ class CalculController {
         this.pourcentageIR = this.calculService.calculerPourcentageIR(this.montantIR, this.remuneration);
     }
 }
-
-app.controller("CalculController", ["CalculService", CalculController]);

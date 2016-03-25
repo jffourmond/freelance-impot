@@ -1,6 +1,6 @@
 'use strict';
 
-app.filter('nombreEntier', () => {
+export default function nombreEntierFilter() {
 
     /**
       * @returns Exemple : 99999.99 => '100 000'
@@ -25,4 +25,4 @@ app.filter('nombreEntier', () => {
 
         return resultat;
     }
-});
+};

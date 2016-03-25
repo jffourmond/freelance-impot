@@ -1,6 +1,9 @@
 'use strict';
 
-class CalculService {
+import Tranche from './Tranche.js';
+import TrancheInconnueException from './TrancheInconnueException.js';
+
+export default class CalculService {
 
     constructor(){
         /* Voir http://www.impots.gouv.fr/portal/dgi/public/popup?espId=1&typePage=cpr02&docOid=documentstandard_6889 */
@@ -96,4 +99,3 @@ class CalculService {
     }
 }
 
-app.service("CalculService", CalculService);
