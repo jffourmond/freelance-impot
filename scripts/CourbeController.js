@@ -32,28 +32,24 @@ export default class CourbeController {
 
     getValeursAxeX() {
         let calculService = this.calculService;
-        return function(d) {
-            return [
-                calculService.tranche1.min,
-                calculService.tranche2.min,
-                calculService.tranche3.min,
-                calculService.tranche4.min,
-                calculService.tranche5.min
-            ];
-        };
+        return () => [
+            calculService.tranche1.min,
+            calculService.tranche2.min,
+            calculService.tranche3.min,
+            calculService.tranche4.min,
+            calculService.tranche5.min
+        ];
     }
 
     getValeursAxeY() {
         let calculService = this.calculService;
-        return function(d) {
-            return [
-                calculService.calculerMontantIR(calculService.tranche1.min),
-                calculService.calculerMontantIR(calculService.tranche2.min),
-                calculService.calculerMontantIR(calculService.tranche3.min),
-                calculService.calculerMontantIR(calculService.tranche4.min),
-                calculService.calculerMontantIR(calculService.tranche5.min)
-            ];
-        };
+        return () => [
+            calculService.calculerMontantIR(calculService.tranche1.min),
+            calculService.calculerMontantIR(calculService.tranche2.min),
+            calculService.calculerMontantIR(calculService.tranche3.min),
+            calculService.calculerMontantIR(calculService.tranche4.min),
+            calculService.calculerMontantIR(calculService.tranche5.min)
+        ];
     }
 
     getContenuInfoBulle() {
