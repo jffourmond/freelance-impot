@@ -10,8 +10,14 @@ var sourcemaps = require('gulp-sourcemaps');
 
 gulp.task('eslint', function() {
     return gulp.src('./scripts/*.js')
-        .pipe(eslint())
-        .pipe(eslint.reporter('default'));
+        .pipe(eslint({
+            env: {
+                es6: true
+            }, parserOptions: {
+                sourceType: "module"
+            }
+        }))
+        .pipe(eslint.format());
 });
 
 
@@ -23,14 +29,14 @@ gulp.task('scripts', function() {
         debug: true
     });
     bundler.transform(babelify);
-    
+
     bundler.bundle()
-        .on('error', function (err) { console.error(err); })
+        .on('error', function(err) { console.error(err); })
         .pipe(source('dist/freelance-impot.js'))
         .pipe(buffer())
         .pipe(sourcemaps.init({ loadMaps: true }))
         .pipe(sourcemaps.write('.'))
-        .pipe(gulp.dest('.'));    
+        .pipe(gulp.dest('.'));
 
 });
 
