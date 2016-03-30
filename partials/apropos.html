@@ -29,7 +29,7 @@
             </div>
         </div>
 
-        <div class="panel panel-default" ng-controller="ContactCtrl">
+        <div class="panel panel-default" ng-controller="ContactController as contact">
             <div class="panel-heading">Une question ? Une remarque ? Une suggestion ? </div>
             <div class="panel-body">
                 Pour me suivre sur Twitter :
@@ -46,7 +46,7 @@
                         }
                     }(document, 'script', 'twitter-wjs');
                 </script>
-                <br/> Pour me contacter par e-mail, <a href="#/contact" ng-click="ouvrirFenetreEnvoiEmail()">cliquer ici</a>.
+                <br/> Pour me contacter par e-mail, <a href="#/contact" ng-click="contact.ouvrirFenetreEnvoiEmail()">cliquer ici</a>.
                 <br/> Pour laisser un commentaire à propos de ce site sur mon blog, <a href="http://jffourmond.github.io/mes-applications/">cliquer ici</a>.
                 <br/>
 

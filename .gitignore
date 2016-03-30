@@ -1,2 +1,5 @@
 .codenvy
 .codenvy/*
+node_modules
+dist
+dist/*

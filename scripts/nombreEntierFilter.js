@@ -1,17 +1,17 @@
 'use strict';
 
-app.filter('nombreEntier', function () {
+export default function nombreEntierFilter() {
 
     /**
-     * @returns Exemple : 99999.99 => '100 000'
-     */
-    return function (nombreAvecVirgules) {
+      * @returns Exemple : 99999.99 => '100 000'
+      */
+    return (nombreAvecVirgules) => {
 
-        var arrondi = '' + Math.round(nombreAvecVirgules);
-        var resultat = '';
-        var i;
+        let arrondi = '' + Math.round(nombreAvecVirgules);
+        let resultat = '';
+        let i;
 
-        var compteur123 = 0;
+        let compteur123 = 0;
         for (i = arrondi.length - 1; i >= 0; i -= 1) {
 
             if (compteur123 === 3) {
@@ -24,6 +24,5 @@ app.filter('nombreEntier', function () {
         }
 
         return resultat;
-    };
-
-});
+    }
+};
