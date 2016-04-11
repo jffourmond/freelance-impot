@@ -2,10 +2,10 @@
 
 describe("nombreEntierFilter", function () {
 
-    var nombreEntierFilter;
+    let nombreEntierFilter;
 
     beforeEach(function () {
-        angular.mock.module('app');
+        angular.mock.module('freelance-impot');
 
         angular.mock.inject(function (_nombreEntierFilter_) {
             nombreEntierFilter = _nombreEntierFilter_;

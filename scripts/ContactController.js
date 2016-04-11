@@ -2,8 +2,7 @@
 
 export default class ContactController {
 
-    constructor($scope, $window) {
-        this.$scope = $scope;
+    constructor($window) {
         this.$window = $window;
     }
 
