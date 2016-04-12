@@ -10,6 +10,8 @@ Simulateur de calcul d'impôt sur le revenu ultra simplifié, pour travailleurs 
 * Bootstrap 3
 * HTML 5
 * CSS 3
+* Gulp
+* Babel
 * Docker
 
 ## Lancer l'appli avec Docker 

@@ -56,7 +56,7 @@ export default class CourbeController {
         let calculService = this.calculService;
         let arrondir = this.arrondir;
 
-        return function(key, x, y, e, graph) {
+        return function(key) {
             let rem = key.point[0];
             let ir = key.point[1];
             let tranche = calculService.getTrancheByRemuneration(rem);

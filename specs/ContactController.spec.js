@@ -7,9 +7,6 @@ describe("ContactController", function() {
     /* Le contrôleur à tester */
     let contactController;
 
-    /* Un mock de l'objet window du navigateur */
-    let mockWindow;
-
     /* variable de test initialisée lors de l'appel à $window.open */
     let windowOpenParams;
 

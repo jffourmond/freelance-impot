@@ -8,18 +8,27 @@ var eslint = require('gulp-eslint');
 var source = require('vinyl-source-stream');
 var sourcemaps = require('gulp-sourcemaps');
 
-gulp.task('eslint', function() {
-    return gulp.src('./scripts/*.js')
+
+function lint(input) {
+    return gulp.src(input)
         .pipe(eslint({
+            extends: "eslint:recommended",
+            env: {
+                browser: true,
+                es6: true, 
+                jasmine: true
+            },
+            globals: {
+                angular: true
+            },
             parserOptions: {
-                ecmaVersion: 6,
-                sourceType: 'module'
+                "sourceType": "module"
             }
         }))
         .pipe(eslint.format());
-});
+}
 
-function packageSources(input, output){
+function packageSources(input, output) {
     var files = glob.sync(input);
     var bundler = browserify({
         entries: files,
@@ -36,8 +45,17 @@ function packageSources(input, output){
         .pipe(gulp.dest('.'));
 }
 
+
+gulp.task('eslint-scripts', function() {
+    lint('./scripts/*.js');
+});
+
 gulp.task('scripts', function() {
     packageSources('./scripts/*.js', 'dist/freelance-impot.js');
+});
+
+gulp.task('eslint-specs', function() {
+    lint('./specs/*.js');
 });
 
 gulp.task('specs', function() {
