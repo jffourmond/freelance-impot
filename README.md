@@ -3,7 +3,7 @@ Simulateur de calcul d'impôt sur le revenu ultra simplifié, pour travailleurs 
 
 ## Technologies utilisées
  
-* ECMAScript 2015
+* ECMAScript 2015 (ES6)
 * AngularJS 1.5
 * <a href="http://cmaurer.github.io/angularjs-nvd3-directives/index.html">Angularjs-nvd3-directives</a>
 * Jasmine
@@ -16,8 +16,8 @@ Simulateur de calcul d'impôt sur le revenu ultra simplifié, pour travailleurs 
 
 ## Lancer l'appli avec Docker 
 
-1. Récupérer le Dockerfile
-2. Aller dans le répertoire où est situé le Dockerfile
+1. `git clone https://github.com/jffourmond/angular1-es6.git`
+2. `cd angular1-es6`
 3. Taper `docker build -t freelance-impot .` pour construire l'image du container.
 4. Taper `docker run -d -p 80:80 -t freelance-impot` pour démarrer le container.
 
