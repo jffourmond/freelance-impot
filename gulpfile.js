@@ -2,6 +2,7 @@ var babelify = require('babelify');
 var browserify = require('browserify');
 var buffer = require('vinyl-buffer');
 var concat = require('gulp-concat');
+var debug = require('gulp-debug');
 var glob = require('glob');
 var gulp = require('gulp');
 var eslint = require('gulp-eslint');
@@ -42,6 +43,7 @@ function packageSources(input, output) {
         .pipe(buffer())
         .pipe(sourcemaps.init({ loadMaps: true }))
         .pipe(sourcemaps.write('.'))
+        .pipe(debug())
         .pipe(gulp.dest('.'));
 }
 
