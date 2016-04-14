@@ -50,7 +50,7 @@ gulp.task('eslint-scripts', function() {
     lint('./scripts/*.js');
 });
 
-gulp.task('scripts', function() {
+gulp.task('scripts', ['eslint-scripts'], function() {
     packageSources('./scripts/*.js', 'dist/freelance-impot.js');
 });
 
@@ -58,11 +58,10 @@ gulp.task('eslint-specs', function() {
     lint('./specs/*.js');
 });
 
-gulp.task('specs', function() {
+gulp.task('specs', ['eslint-specs'], function() {
     packageSources('./specs/*.js', 'dist/freelance-impot-specs.js');
 });
 
 gulp.task('default', ['scripts', 'specs'], function() {
-    gulp.watch('./**', ['scripts', 'specs']);
 });
 
