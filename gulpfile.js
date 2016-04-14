@@ -62,6 +62,5 @@ gulp.task('specs', ['eslint-specs'], function() {
     packageSources('./specs/*.js', 'dist/freelance-impot-specs.js');
 });
 
-gulp.task('default', ['scripts', 'specs'], function() {
-});
+gulp.task('default', ['specs', 'scripts']);
 
