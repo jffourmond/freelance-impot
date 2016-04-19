@@ -4,12 +4,9 @@ Simulateur de calcul d'impôt sur le revenu ultra simplifié, pour travailleurs 
 ## Technologies utilisées
  
 * ECMAScript 2015 (ES6)
-* AngularJS 1.5
-* <a href="http://cmaurer.github.io/angularjs-nvd3-directives/index.html">Angularjs-nvd3-directives</a>
+* AngularJS 1.5 + <a href="http://cmaurer.github.io/angularjs-nvd3-directives/index.html">Angularjs-nvd3-directives</a>
 * Jasmine
-* Bootstrap 3
-* HTML 5
-* CSS 3
+* HTML 5 + CSS 3 + Bootstrap 3
 * npm + browserify + babelify
 * Docker
 
