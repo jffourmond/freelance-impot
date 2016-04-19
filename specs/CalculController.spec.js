@@ -3,7 +3,9 @@
 import CalculService from '../scripts/CalculService.js';
 import CalculController from '../scripts/CalculController.js';
 
-describe("CalculControllerSpec", function () {
+describe("CalculController", calculControllerSpec);
+
+export default function calculControllerSpec() {
 
     /* Le contrôleur à tester */
     let ctrl;
@@ -65,4 +67,4 @@ describe("CalculControllerSpec", function () {
 
     });
 
-});
+}

@@ -10,8 +10,7 @@ Simulateur de calcul d'impôt sur le revenu ultra simplifié, pour travailleurs 
 * Bootstrap 3
 * HTML 5
 * CSS 3
-* Gulp
-* Babel
+* npm + browserify + babelify
 * Docker
 
 ## Lancer l'appli avec Docker 
@@ -19,7 +18,7 @@ Simulateur de calcul d'impôt sur le revenu ultra simplifié, pour travailleurs 
 1. `git clone https://github.com/jffourmond/freelance-impot.git`
 2. `cd freelance-impot`
 3. Taper `docker build -t freelance-impot .` pour construire l'image du container.
-4. Taper `docker run -d -p 80:80 -t freelance-impot` pour démarrer le container.
+4. Taper `docker run -d -p 80:80 --name freelance-impot -t freelance-impot` pour démarrer le container.
 
 ## Tester l'appli
 

@@ -2,7 +2,9 @@
 
 import CalculService from '../scripts/CalculService.js';
 
-describe("CalculService", function () {
+describe("CalculService", calculServiceSpec);
+
+export default function calculServiceSpec () {
 
     let calculService;
 
@@ -227,4 +229,4 @@ describe("CalculService", function () {
         });
     });
 
-});
+}

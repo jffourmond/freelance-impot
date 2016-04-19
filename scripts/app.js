@@ -1,5 +1,7 @@
 'use strict';
 
+import Tranche from './Tranche.js';
+import TrancheInconnueException from './TrancheInconnueException.js';
 import nombreEntierFilter from './nombreEntierFilter.js';
 import CalculService from './CalculService.js';
 import CalculController from './CalculController.js';

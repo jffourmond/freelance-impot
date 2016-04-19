@@ -1,5 +1,5 @@
-.codenvy
-.codenvy/*
 node_modules
 dist
 dist/*
+tmp
+tmp/*

@@ -1,8 +1,10 @@
 'use strict';
 
-import ContactController from '../scripts/ContactController.js';
+import CalculController from '../scripts/CalculController.js';
 
-describe("ContactController", function() {
+describe("ContactController", contactControllerSpec);
+
+export default function contactControllerSpec() {
 
     /* Le contrôleur à tester */
     let contactController;
@@ -37,4 +39,4 @@ describe("ContactController", function() {
 
     });
 
-});
+}
