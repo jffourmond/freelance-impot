@@ -1,6 +1,6 @@
 'use strict';
 
-import CalculController from '../scripts/CalculController.js';
+import ContactController from '../scripts/ContactController.js';
 
 describe("ContactController", contactControllerSpec);
 
@@ -13,8 +13,6 @@ export default function contactControllerSpec() {
     let windowOpenParams;
 
     beforeEach(function() {
-        angular.mock.module('freelance-impot');
-
         let mockWindow = {
             open: function(params) {
                 windowOpenParams = params;

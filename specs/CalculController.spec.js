@@ -11,7 +11,6 @@ export default function calculControllerSpec() {
     let ctrl;
 
     beforeEach(function () {
-        angular.mock.module('freelance-impot');
         let calculService = new CalculService();
         ctrl = new CalculController(calculService);
     });

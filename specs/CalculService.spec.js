@@ -9,8 +9,6 @@ export default function calculServiceSpec () {
     let calculService;
 
     beforeEach(function () {
-        angular.mock.module('freelance-impot');
-
         calculService = new CalculService();
     });
 

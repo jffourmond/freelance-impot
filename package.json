@@ -12,7 +12,7 @@
       "clean": "rm -rf dist && rm -rf tmp",
       "mkdir": "mkdir tmp && mkdir dist",
       "prebuild": "npm run clean && npm run mkdir",
-      "specs": "browserify specs/app.spec.js -o dist/freelance-impot-specs.js -t [ babelify --presets [ es2015 ] ]",
+      "specs": "browserify specs/specRunner.js -o dist/freelance-impot-avec-specs.js -t [ babelify --presets [ es2015 ] ]",
       "scripts": "browserify scripts/app.js -o dist/freelance-impot.js -t [ babelify --presets [ es2015 ] ]",
       "build": "npm run scripts && npm run specs"
   }
