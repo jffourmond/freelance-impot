@@ -8,6 +8,4 @@ WORKDIR /docker/freelance-impot
 
 RUN npm install
 RUN npm run build
-
-# Copies the source code to Apache's default directory
-COPY . /usr/local/apache2/htdocs
+RUN cp -R * /usr/local/apache2/htdocs

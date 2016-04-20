@@ -3,3 +3,4 @@ dist
 dist/*
 tmp
 tmp/*
+npm-debug.log
