@@ -1,7 +1,7 @@
 'use strict';
 
-import CalculService from '../scripts/CalculService.js';
-import CalculController from '../scripts/CalculController.js';
+import CalculService from './CalculService.js';
+import CalculController from './CalculController.js';
 
 describe("CalculController", calculControllerSpec);
 

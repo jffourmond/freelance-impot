@@ -1,6 +1,6 @@
 'use strict';
 
-import ContactController from '../scripts/ContactController.js';
+import ContactController from './ContactController.js';
 
 describe("ContactController", contactControllerSpec);
 

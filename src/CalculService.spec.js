@@ -1,6 +1,6 @@
 'use strict';
 
-import CalculService from '../scripts/CalculService.js';
+import CalculService from './CalculService.js';
 
 describe("CalculService", calculServiceSpec);
 

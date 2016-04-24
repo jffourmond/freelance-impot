@@ -1,6 +1,6 @@
 'use strict';
 
-import nombreEntierFilter from '../scripts/nombreEntierFilter.js';
+import nombreEntierFilter from './nombreEntierFilter.js';
 
 describe("nombreEntierFilter", nombreEntierFilterSpec);
 

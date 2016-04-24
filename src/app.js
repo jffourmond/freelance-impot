@@ -1,10 +1,10 @@
 'use strict';
 
-import nombreEntierFilter from './nombreEntierFilter.js';
-import CalculService from './CalculService.js';
-import CalculController from './CalculController.js';
-import CourbeController from './CourbeController.js';
-import ContactController from './ContactController.js';
+import nombreEntierFilter from './nombreEntierFilter';
+import CalculService from './CalculService';
+import CalculController from './CalculController';
+import CourbeController from './CourbeController';
+import ContactController from './ContactController';
 
 let applicationName = 'freelance-impot';
 let app = angular.module(applicationName, ['ngRoute', 'nvd3ChartDirectives']);
