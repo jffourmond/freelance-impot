@@ -1,11 +1,11 @@
 'use strict';
 
-import CalculService from './CalculService.js';
-import CalculController from './CalculController.js';
+import CalculService from './CalculService';
+import CalculController from './CalculController';
 
 describe("CalculController", calculControllerSpec);
 
-export default function calculControllerSpec() {
+function calculControllerSpec() {
 
     /* Le contrôleur à tester */
     let ctrl;

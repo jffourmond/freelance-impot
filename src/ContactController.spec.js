@@ -1,10 +1,10 @@
 'use strict';
 
-import ContactController from './ContactController.js';
+import ContactController from './ContactController';
 
 describe("ContactController", contactControllerSpec);
 
-export default function contactControllerSpec() {
+function contactControllerSpec() {
 
     /* Le contrôleur à tester */
     let contactController;

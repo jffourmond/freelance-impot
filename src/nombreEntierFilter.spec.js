@@ -1,10 +1,10 @@
 'use strict';
 
-import nombreEntierFilter from './nombreEntierFilter.js';
+import nombreEntierFilter from './nombreEntierFilter';
 
 describe("nombreEntierFilter", nombreEntierFilterSpec);
 
-export default function nombreEntierFilterSpec() {
+function nombreEntierFilterSpec() {
 
     let filter;
 

@@ -1,10 +1,10 @@
 'use strict';
 
-import CalculService from './CalculService.js';
+import CalculService from './CalculService';
 
 describe("CalculService", calculServiceSpec);
 
-export default function calculServiceSpec () {
+function calculServiceSpec () {
 
     let calculService;
 
