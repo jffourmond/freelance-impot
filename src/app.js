@@ -14,22 +14,4 @@ angular.module(applicationName).controller("CalculController", ["CalculService",
 angular.module(applicationName).controller('CourbeController', ['CalculService', 'nombreEntierFilter', CourbeController]);
 angular.module(applicationName).controller("ContactController", ContactController);
 
-app.config(function ($routeProvider) {
-    $routeProvider.
-    when("/", {
-        templateUrl: "partials/simulateur.html",
-        controller: "CalculController"
-    }).
-    when("/apropos", {
-        templateUrl: "partials/apropos.html",
-        controller: "ContactController"
-    }).
-    when("/technos", {
-        templateUrl: "partials/technos.html"
-    }).
-    otherwise({
-        redirectTo: "/"
-    });
-});
-
 angular.bootstrap(document, [applicationName]);

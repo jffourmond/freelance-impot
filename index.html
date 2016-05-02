@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="initial-scale=1" />
-	<meta name="keywords" content="freelance,impôt,revenu,tranche,calcul,simplifié,indépendant">	
+    <meta name="keywords" content="freelance,impôt,revenu,tranche,calcul,simplifié,indépendant">
     <title>Freelance Impôt : simulateur de calcul de l'impôt sur le revenu ultra simplifié</title>
-	<meta name="description" content="Simulateur de calcul de l'impôt sur le revenu ultra simplifié, pour travailleurs indépendants, avec détail par tranche d'imposition.">
-	
+    <meta name="description" content="Simulateur de calcul de l'impôt sur le revenu ultra simplifié, pour travailleurs indépendants, avec détail par tranche d'imposition.">
+
     <!-- Bootstrap -->
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap-theme.min.css">
@@ -30,19 +30,142 @@
         </div>
     </div>
     <div class="container">
-        <div data-ng-view></div>
+        <div class="row" ng-controller="CalculController as calcul">
 
-        <div class="row">
-            <div class="footer col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
-                <a href="#/">simulateur</a> -
-                <a href="#/apropos">à propos</a> -
-                <a href="#/technos">technos</a>
+            <div class="bloc-courbe hidden-xs hidden-sm hidden-md col-lg-7 text-center" ng-controller="CourbeController as courbe">
+
+                <nvd3-line-chart data="courbe.data" id="impotChart" width="650" height="440" interactive="true" xAxisTickValues="courbe.getValeursAxeX()"
+                yAxisTickValues="courbe.getValeursAxeY()" margin="{left:75,top:20,bottom:50,right:20}" showXAxis="true" showYAxis="true"
+                yAxisShowMaxMin="false" xAxisShowMaxMin="false" xAxisLabel="montant de la rémunération en euros" yAxisLabel="montant de l'impôt en euros"
+                xAxisTickFormat="courbe.arrondirValeursAxe()" yAxisTickFormat="courbe.arrondirValeursAxe()" tooltips="true"
+                tooltipcontent="courbe.getContenuInfoBulle()">
+                    <svg></svg>
+                </nvd3-line-chart>
+            </div>
+
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-5 bloc-inputs arrondi">
+                <label for="inputRevenus">Saisissez le montant de votre rémunération :</label>
+                <div id="inputRevenusGroup" class="input-group">
+                    <input id="inputRevenus" type="number" min="0" step="5000" ng-model="calcul.remuneration" ng-change="calcul.calculerMontantIR()"
+                    class="form-control" aria-describedby="inputRevenus-addon" />
+                    <span class="input-group-addon" id="inputRevenus-addon">euros par an </span>
+                </div>
+
+
+                <div id="resultats">
+                    <label>Montant de votre impôt sur le revenu :</label>
+                    <br/>
+                    <span class="h1">{{calcul.montantIR | nombreEntier}} €</span> / an, soit {{calcul.pourcentageIR | nombreEntier}}%
+                    de votre rémunération.
+                </div>
+
+                <div id="details">
+                    <label>Détail :</label>
+                    <br/>
+                    <ul class="list-group">
+                        <li class="list-group-item">Tranche à {{calcul.tranche1.tauxImposition}}% : {{calcul.montantImpotTranche1 | nombreEntier}} €
+                        </li>
+                        <li class="list-group-item list-group-item-success">Tranche à {{calcul.tranche2.tauxImposition}}% : {{calcul.montantImpotTranche2 | nombreEntier}} €
+                        </li>
+                        <li class="list-group-item list-group-item-info">Tranche à {{calcul.tranche3.tauxImposition}}% : {{calcul.montantImpotTranche3 | nombreEntier}} €
+                        </li>
+                        <li class="list-group-item list-group-item-warning">Tranche à {{calcul.tranche4.tauxImposition}}% : {{calcul.montantImpotTranche4 | nombreEntier}} €
+                        </li>
+                        <li class="list-group-item list-group-item-danger">Tranche à {{calcul.tranche5.tauxImposition}}% : {{calcul.montantImpotTranche5 | nombreEntier}} €
+                        </li>
+                    </ul>
+
+                </div>
             </div>
         </div>
+        <div class="row">
+            <div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">Comment ça marche ?</div>
+                    <div class="panel-body">
+                        <p>
+                            Les chiffres calculés par le simulateur peuvent différer de ceux calculés par le Ministère des finances et des comptes publics.
+                            Il s'agit d'une simulation simplifiée au maximum, basée sur les tranches d'imposition données
+                            par le Ministère sur cette page :
+                            <a href="http://vosdroits.service-public.fr/particuliers/F1419.xhtml">
+					Quel est le barème de l'impôt sur le revenu ? 
+				</a>
+                        </p>
+                        <p>
+                            Le simulateur calcule le montant de l'impôt sur le revenu 2015 pour une personne célibataire. Ni les abattements, ni la décôte,
+                            ni les parts de quotient familial, ni aucune réduction d'impôts ne sont pris en compte.
+                        </p>
+                        <p>
+                            Dans le simulateur, le montant à saisir est appelé "rémunération" et dépend du statut du travailleur. S'il s'agit par exemple
+                            d'une Entreprise Individuelle, la rémunération correspond aux revenus annuels HT. S'il s'agit
+                            d'une EURL, la rémunération correspond à ce que l'entreprise verse au travailleur. Pour un salarié,
+                            il s'agirait du revenu net imposable.
+                        </p>
+                    </div>
+                </div>
 
+                <div class="panel panel-default">
+                    <div class="panel-heading">Pourquoi ce site ?</div>
+                    <div class="panel-body">
+                        <p>
+                            Quand on est salarié, on sait qu'il faut garder chaque mois une partie de son salaire pour payer l'impôt sur le revenu (IR).
+                            Cette somme pouvant être mensualisée, ce n'est pas forcément une préoccupation pour le salarié.
+                        </p>
+                        <p>
+                            Par contre, quand on se lance en tant que travailleur non salarié (TNS), on ne sait pas bien le montant que l'on va devoir
+                            payer. Cette somme pouvant être beaucoup plus importante, il est important de savoir à quoi s'attendre.
+                            La plupart des simulateurs que l'on trouve sur internet sont complexes. Ce site a donc été développé
+                            dans le but de donner rapidement une idée du montant à payer, en saisissant uniquement le montant
+                            de sa rémunération annuelle.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">Technos</div>
+                    <div class="panel-body">
+                        Site responsive développé avec les technologies suivantes :
+                        <br/>
+                        <br/>
+                        <ul>
+                            <li>ECMAScript 2015 (ES6)</li>
+                            <li>AngularJS 1.5 + <a href="http://cmaurer.github.io/angularjs-nvd3-directives/index.html">Angularjs-nvd3-directives</a></li>
+                            <li>Jasmine (<a href="./specRunner.html">Exécuter les tests</a>)</li>
+                            <li>HTML 5 + CSS 3 + Bootstrap 3</li>
+                            <li>npm + browserify + babelify</li>
+                            <li>Docker</li>
+                        </ul>
+                        <p>
+                            Les sources sont sur <a href="https://github.com/jffourmond/freelance-impot">GitHub</a>.
+                        </p>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">Contact</div>
+                    <div class="panel-body">
+                        <br/> Pour me suivre sur Twitter :
+                        <a href="https://twitter.com/jf_fourmond" class="twitter-follow-button" data-show-count="false">Follow @jf_fourmond</a>
+                        <script>
+                            ! function (d, s, id) {
+                        var js, fjs = d.getElementsByTagName(s)[0],
+                            p = /^http:/.test(d.location) ? 'http' : 'https';
+                        if(!d.getElementById(id)) {
+                            js = d.createElement(s);
+                            js.id = id;
+                            js.src = p + '://platform.twitter.com/widgets.js';
+                            fjs.parentNode.insertBefore(js, fjs);
+                        }
+                    }(document, 'script', 'twitter-wjs');
+                        </script>
+                        <br/> Pour me contacter par e-mail, <a href="#/contact" ng-click="contact.ouvrirFenetreEnvoiEmail()">cliquer ici</a>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <!-- container -->
-    
+
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
@@ -59,17 +182,17 @@
     <!-- Freelance-impot -->
     <script src="dist/freelance-impot.js" type="application/javascript"></script>
 
-      <!-- Google Analytics -->
-	<script>
-	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    <!-- Google Analytics -->
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
 	  ga('create', 'ID_ANALYTICS', 'auto');
 	  ga('send', 'pageview');
-	</script>   
-   
+    </script>
+
 </body>
 
 </html>
