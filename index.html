@@ -141,7 +141,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="panel panel-default">
+                <div class="panel panel-default" ng-controller="ContactController as contact">
                     <div class="panel-heading">Contact</div>
                     <div class="panel-body">
                         <br/> Pour me suivre sur Twitter :
@@ -158,7 +158,7 @@
                         }
                     }(document, 'script', 'twitter-wjs');
                         </script>
-                        <br/> Pour me contacter par e-mail, <a href="#/contact" ng-click="contact.ouvrirFenetreEnvoiEmail()">cliquer ici</a>.
+                        <br/> Pour me contacter par e-mail, <a href="#" ng-click="contact.ouvrirFenetreEnvoiEmail()">cliquer ici</a>.
                         </p>
                     </div>
                 </div>
