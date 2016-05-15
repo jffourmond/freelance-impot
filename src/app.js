@@ -7,7 +7,7 @@ import CourbeController from './CourbeController';
 import ContactController from './ContactController';
 
 let applicationName = 'freelance-impot';
-let app = angular.module(applicationName, ['ngRoute', 'nvd3ChartDirectives']);
+let app = angular.module(applicationName, ['nvd3ChartDirectives']);
 angular.module(applicationName).filter('nombreEntier', nombreEntierFilter);
 angular.module(applicationName).service("CalculService", CalculService);
 angular.module(applicationName).controller("CalculController", ["CalculService", CalculController]);

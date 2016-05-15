@@ -1,18 +1,18 @@
 'use strict';
 
-import Tranche from './Tranche.js';
-import TrancheInconnueException from './TrancheInconnueException.js';
+import Tranche from './Tranche';
+import TrancheInconnueException from './TrancheInconnueException';
 
 export default class CalculService {
 
     constructor(){
         /* Voir http://www.impots.gouv.fr/portal/dgi/public/popup?espId=1&typePage=cpr02&docOid=documentstandard_6889 */
-        this.tranche1 = new Tranche(0, 9690, 0);
-        this.tranche2 = new Tranche(9690, 26764, 14);
-        this.tranche3 = new Tranche(26764, 71754, 30);
-        this.tranche4 = new Tranche(71754, 151956, 41);
-        this.tranche5 = new Tranche(151956, Number.MAX_VALUE, 45);
-        this.tranches = [this.tranche1, this.tranche2, this.tranche3, this.tranche4, this.tranche5];       
+        const tranche1 = new Tranche(0, 9690, 0);
+        const tranche2 = new Tranche(9690, 26764, 14);
+        const tranche3 = new Tranche(26764, 71754, 30);
+        const tranche4 = new Tranche(71754, 151956, 41);
+        const tranche5 = new Tranche(151956, Number.MAX_VALUE, 45);
+        this.tranches =  [tranche1, tranche2, tranche3, tranche4, tranche5];       
     }
 
 
@@ -31,7 +31,7 @@ export default class CalculService {
      * @throws TrancheInconnueException quand le paramètre est différent de 1, 2, 3, 4 ou 5
      */
     getTranche (numeroTranche) {
-        if (!this.isNombreEntier(numeroTranche) || numeroTranche < 1 || numeroTranche > 5) {
+        if ( !this.isNombreEntier(numeroTranche) || numeroTranche < 1 || numeroTranche > 5) {
             throw new TrancheInconnueException(numeroTranche);
         }
 
@@ -45,7 +45,7 @@ export default class CalculService {
      * @returns le montant de l'impôt pour la tranche demandée.
      */
     calculerMontantImpotTranche (remuneration, numeroTranche) {
-        if (!this.isNombre(remuneration) || remuneration < 0) {
+        if ( !this.isNombre(remuneration) || remuneration < 0) {
             throw "Montant invalide";
         }
 
@@ -55,7 +55,7 @@ export default class CalculService {
         }
         let plafond = (remuneration > tranche.max) ? tranche.max : remuneration;
         let montantImposablePourCetteTranche = plafond - tranche.min;
-        return (montantImposablePourCetteTranche) * tranche.tauxImposition / 100.0;
+        return montantImposablePourCetteTranche * tranche.tauxImposition / 100.0;
     }
 
     /** 
@@ -95,7 +95,7 @@ export default class CalculService {
                 return trancheCourante;
             }
         }
-        return this.tranche1;
+        return this.getTranche(1);
     }
 }
 
