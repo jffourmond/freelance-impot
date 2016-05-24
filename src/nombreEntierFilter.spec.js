@@ -1,5 +1,3 @@
-'use strict';
-
 import nombreEntierFilter from './nombreEntierFilter';
 
 describe("nombreEntierFilter", nombreEntierFilterSpec);
@@ -8,17 +6,17 @@ function nombreEntierFilterSpec() {
 
     let filter;
 
-    beforeEach(function() {
+    beforeEach(() => {
         filter = nombreEntierFilter();
     });
 
-    it('devrait être initialisé', function() {
+    it('devrait être initialisé', () => {
         expect(nombreEntierFilter).not.toBe(null);
     });
 
-    describe("la fonction de filtrage", function() {
+    describe("la fonction de filtrage", () => {
 
-        it('devrait renvoyer des entiers avec des espaces', function() {
+        it('devrait renvoyer des entiers avec des espaces', () => {
             expect(filter(0.4)).toBe('0');
             expect(filter(50)).toBe('50');
             expect(filter(101.1)).toBe('101');

@@ -1,5 +1,3 @@
-'use strict';
-
 export default function nombreEntierFilter() {
 
     /**
@@ -7,7 +5,7 @@ export default function nombreEntierFilter() {
       */
     return (nombreAvecVirgules) => {
 
-        let arrondi = '' + Math.round(nombreAvecVirgules);
+        const arrondi = `${Math.round(nombreAvecVirgules)}`;
         let resultat = '';
         let i;
 
@@ -15,7 +13,7 @@ export default function nombreEntierFilter() {
         for (i = arrondi.length - 1; i >= 0; i -= 1) {
 
             if (compteur123 === 3) {
-                resultat = arrondi[i] + ' ' + resultat;
+                resultat = `${arrondi[i]} ${resultat}`;
                 compteur123 = 0;
             } else {
                 resultat = arrondi[i] + resultat;

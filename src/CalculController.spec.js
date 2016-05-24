@@ -1,5 +1,3 @@
-'use strict';
-
 import CalculService from './CalculService';
 import CalculController from './CalculController';
 
@@ -10,17 +8,17 @@ function calculControllerSpec() {
     /* Le contrôleur à tester */
     let ctrl;
 
-    beforeEach(function () {
-        let calculService = new CalculService();
+    beforeEach(() => {
+        const calculService = new CalculService();
         ctrl = new CalculController(calculService);
     });
 
-    it('devrait être initialisé', function () {
+    it('devrait être initialisé', () => {
         expect(ctrl).not.toBe(null);
         expect(ctrl.remuneration).toBe(0);
     });
 
-    it('devrait récupérer toutes les tranches', function () {
+    it('devrait récupérer toutes les tranches', () => {
         expect(ctrl.tranche1.tauxImposition).toBe(0);
         expect(ctrl.tranche2.tauxImposition).toBe(14);
         expect(ctrl.tranche3.tauxImposition).toBe(30);
@@ -28,9 +26,9 @@ function calculControllerSpec() {
         expect(ctrl.tranche5.tauxImposition).toBe(45);
     });
 
-    describe("calculerMontantIR", function () {
+    describe("calculerMontantIR", () => {
 
-        it('devrait initialiser toutes les variables à 0 pour une rémunération de 0€', function () {
+        it('devrait initialiser toutes les variables à 0 pour une rémunération de 0€', () => {
 
             ctrl.remuneration = 0;
             ctrl.calculerMontantIR();
@@ -44,7 +42,7 @@ function calculControllerSpec() {
             expect(ctrl.pourcentageIR).toBeCloseTo(0);
         });
 
-        it('devrait calculer les bonnes valeurs pour toutes les variables du CalculController', function () {
+        it('devrait calculer les bonnes valeurs pour toutes les variables du CalculController', () => {
 
             ctrl.remuneration = 200000;
             ctrl.calculerMontantIR();

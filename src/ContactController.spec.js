@@ -1,5 +1,3 @@
-'use strict';
-
 import ContactController from './ContactController';
 
 describe("ContactController", contactControllerSpec);
@@ -12,9 +10,9 @@ function contactControllerSpec() {
     /* variable de test initialisée lors de l'appel à $window.open */
     let windowOpenParams;
 
-    beforeEach(function() {
-        let mockWindow = {
-            open: function(params) {
+    beforeEach(() => {
+        const mockWindow = {
+            open: (params) => {
                 windowOpenParams = params;
             }
         };
@@ -22,13 +20,13 @@ function contactControllerSpec() {
         contactController = new ContactController(mockWindow);
     });
 
-    it('devrait être initialisé', function() {
+    it('devrait être initialisé', () => {
         expect(contactController).not.toBe(null);
     });
 
-    describe("ouvrirFenetreEnvoiEmail", function() {
+    describe("ouvrirFenetreEnvoiEmail", () => {
 
-        it("devrait ouvrir la fenêtre d'envoi d'email avec les bons paramètres", function() {
+        it("devrait ouvrir la fenêtre d'envoi d'email avec les bons paramètres", () => {
 
             expect(windowOpenParams).toBe(undefined);
             contactController.ouvrirFenetreEnvoiEmail();

@@ -1,5 +1,3 @@
-'use strict';
-
 import Tranche from './Tranche';
 import TrancheInconnueException from './TrancheInconnueException';
 
@@ -21,7 +19,7 @@ export default class CalculService {
     }
 
     isNombreEntier(n) {
-        let isEntier = this.isNombre(n) && (n === parseInt(n, 10));
+        const isEntier = this.isNombre(n) && (n === parseInt(n, 10));
         return isEntier;
     }
 
@@ -49,12 +47,12 @@ export default class CalculService {
             throw "Montant invalide";
         }
 
-        let tranche = this.getTranche(numeroTranche);
+        const tranche = this.getTranche(numeroTranche);
         if (remuneration < tranche.min) {
             return 0;
         }
-        let plafond = (remuneration > tranche.max) ? tranche.max : remuneration;
-        let montantImposablePourCetteTranche = plafond - tranche.min;
+        const plafond = (remuneration > tranche.max) ? tranche.max : remuneration;
+        const montantImposablePourCetteTranche = plafond - tranche.min;
         return montantImposablePourCetteTranche * tranche.tauxImposition / 100.0;
     }
 
@@ -89,8 +87,8 @@ export default class CalculService {
      */
     getTrancheByRemuneration (remuneration) {
         let i, trancheCourante;
-        for (i = this.tranches.length - 1; i >= 0; i -= 1) {
-            trancheCourante = this.tranches[i];
+        for (i = 5; i > 0; i -= 1) {
+            trancheCourante = this.getTranche(i);
             if (remuneration > trancheCourante.min) {
                 return trancheCourante;
             }

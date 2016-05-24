@@ -1,23 +1,18 @@
-'use strict';
-
 export default class CourbeController {
 
     constructor(calculService, nombreEntierFilter) {
         this.calculService = calculService;
         this.nombreEntierFilter = nombreEntierFilter;
-        this.arrondir = function(montant) {
-            return nombreEntierFilter(montant);
-        };
-
+        this.arrondir = montant => nombreEntierFilter(montant);
         this.initCourbe();
     }
 
     initCourbe() {
-        let montantsImpotsCalcules = [];
+        const montantsImpotsCalcules = [];
         let i;
         /* on met les montants calculés dans un tableau */
         for (i = 0; i <= 160; i += 2) {
-            let remuneration = i * 1000;
+            const remuneration = i * 1000;
             montantsImpotsCalcules.push([
                 remuneration,
                 this.calculService.calculerMontantIR(remuneration)
@@ -31,7 +26,7 @@ export default class CourbeController {
     }
 
     getValeursAxeX() {
-        let calculService = this.calculService;
+        const calculService = this.calculService;
         return () => [
             calculService.getTranche(1).min,
             calculService.getTranche(2).min,
@@ -42,7 +37,7 @@ export default class CourbeController {
     }
 
     getValeursAxeY() {
-        let calculService = this.calculService;
+        const calculService = this.calculService;
         return () => [
             calculService.calculerMontantIR(calculService.getTranche(1).min),
             calculService.calculerMontantIR(calculService.getTranche(2).min),
@@ -53,19 +48,19 @@ export default class CourbeController {
     }
 
     getContenuInfoBulle() {
-        let calculService = this.calculService;
-        let arrondir = this.arrondir;
+        const calculService = this.calculService;
+        const arrondir = this.arrondir;
 
-        return function(key) {
-            let rem = key.point[0];
-            let ir = key.point[1];
-            let tranche = calculService.getTrancheByRemuneration(rem);
+        return key => {
+            const rem = key.point[0];
+            const ir = key.point[1];
+            const tranche = calculService.getTrancheByRemuneration(rem);
 
-            return "<div class='infoBulle tranche" + tranche.tauxImposition + "'>" +
-                "Tranche à " + tranche.tauxImposition + "%.<br/>" +
-                "Pour une rémunération de <b>" + arrondir(rem) + "</b>€,<br/>" +
-                "le montant total de l'impôt est <b>" + arrondir(ir) + "</b>€,<br/>" +
-                "soit " + arrondir(calculService.calculerPourcentageIR(ir, rem)) + "% de la rémunération.</div>";
+            return `<div class='infoBulle tranche${tranche.tauxImposition}'>
+                Tranche à ${tranche.tauxImposition}%.<br/>
+                Pour une rémunération de <b>${arrondir(rem)}</b>€,<br/>"
+                le montant total de l'impôt est <b>${arrondir(ir)}</b>€,<br/>
+                soit ${arrondir(calculService.calculerPourcentageIR(ir, rem))} % de la rémunération.</div>`;
 
         };
     }

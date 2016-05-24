@@ -1,5 +1,3 @@
-'use strict';
-
 export default class CalculController {
     
     constructor(calculService) {
