@@ -1,4 +1,4 @@
-FROM httpd:2.4
+FROM httpd:2.3
 
 RUN apt-get update -y && apt-get install -y nodejs-legacy npm
 
