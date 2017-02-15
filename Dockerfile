@@ -7,5 +7,7 @@ COPY . /docker/freelance-impot/
 WORKDIR /docker/freelance-impot
 
 RUN npm install
+
+RUN date > version.txt
 RUN npm run build
 RUN cp -R * /usr/local/apache2/htdocs
