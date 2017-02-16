@@ -58,7 +58,7 @@ export default class CourbeController {
 
             return `<div class='infoBulle tranche${tranche.tauxImposition}'>
                 Tranche à ${tranche.tauxImposition}%.<br/>
-                Pour une rémunération de <b>${arrondir(rem)}</b>€,<br/>"
+                Pour une rémunération de <b>${arrondir(rem)}</b>€,<br/>
                 le montant total de l'impôt est <b>${arrondir(ir)}</b>€,<br/>
                 soit ${arrondir(calculService.calculerPourcentageIR(ir, rem))} % de la rémunération.</div>`;
 
