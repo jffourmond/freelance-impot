@@ -19,4 +19,4 @@ Simulateur de calcul d'impôt sur le revenu ultra simplifié, pour travailleurs 
 
 ## Tester l'appli
 
-L'appli est déployée à cette adresse : http://www.freelance-impot.fr
+L'appli est déployée à cette adresse : http://freelance-impot.jffourmond.com/
